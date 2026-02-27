@@ -5,57 +5,116 @@ navbar.innerHTML = `
     <div id="navContainer" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 transition-all duration-300">
       <div id="navBar" class="relative mt-3 flex items-center justify-between rounded-2xl px-3 py-2.5 transition-all duration-300">
         <a href="/" class="inline-flex items-center gap-3 shrink-0">
-        <img src="/docs/assets/logo.svg" class="h-7" alt="">
-          </a>
+          <img src="/docs/assets/logo.svg" class="h-7" alt="">
+        </a>
 
         <nav class="hidden md:block">
           <ul class="flex items-center justify-center gap-4 lg:gap-6 text-sm font-semibold">
             <li><a class="navLink transition" href="/">Home</a></li>
 
             <li class="relative group">
-              <a class="navLink transition" aria-haspopup="true">
+              <a class="navLink transition" href="/warehouse-flooring/" aria-haspopup="true">
                 <span class="inline-flex items-center gap-1">
-                  Services
+                  Warehouse Flooring
                   <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
                 </span>
               </a>
 
               <div class="absolute left-0 top-full hidden pt-3 group-hover:block group-focus-within:block">
                 <div class="w-80 rounded-2xl bg-white/95 backdrop-blur ring-1 ring-slate-900/10 shadow-xl shadow-slate-900/10 p-2">
-                
-                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/docs/services/concrete-floor-repair/">
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring/">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
-                      <i class="fa-solid fa-hammer"></i>
+                      <i class="fa-solid fa-layer-group"></i>
                     </span>
-                    Concrete Floor Repair
+                    Warehouse Flooring
                   </a>
 
-                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/docs/services/industrial-floor-repair/">
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring/super-flat-vna-flooring/">
+                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                      <i class="fa-solid fa-ruler-combined"></i>
+                    </span>
+                    Super-flat VNA Flooring
+                  </a>
+
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring#warehouse-floor-repair-guide">
+                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                      <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    Warehouse Floor Repair Guide
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li class="relative group">
+              <a class="navLink transition" href="/industrial-flooring/" aria-haspopup="true">
+                <span class="inline-flex items-center gap-1">
+                  Industrial Flooring
+                  <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
+                </span>
+              </a>
+
+              <div class="absolute left-0 top-full hidden pt-3 group-hover:block group-focus-within:block">
+                <div class="w-80 rounded-2xl bg-white/95 backdrop-blur ring-1 ring-slate-900/10 shadow-xl shadow-slate-900/10 p-2">
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/industrial-flooring/">
+                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                      <i class="fa-solid fa-layer-group"></i>
+                    </span>
+                    Industrial Flooring
+                  </a>
+
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/industrial-flooring/industrial-floor-repair/">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
                       <i class="fa-solid fa-industry"></i>
                     </span>
                     Industrial Floor Repair
                   </a>
 
-                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/docs/services/warehouse-floor-repair/">
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/industrial-flooring#industrial-floor-repair-guide">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
-                      <i class="fa-solid fa-warehouse"></i>
+                      <i class="fa-solid fa-book-open"></i>
                     </span>
-                    Warehouse Floor Repair
-                  </a>
-
-                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/docs/services/super-flat-vna-flooring/">
-                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
-                      <i class="fa-solid fa-ruler-combined"></i>
-                    </span>
-                    Super-flat VNA Flooring
+                    Industrial Floor Repair Guide
                   </a>
                 </div>
               </div>
             </li>
 
-            <li><a class="navLink transition" href="/docs/resources/">Resources</a></li>
-            <li><a class="navLink transition" href="/index.html#about">About</a></li>
+            <li class="relative group">
+              <a class="navLink transition" href="/commercial-flooring/" aria-haspopup="true">
+                <span class="inline-flex items-center gap-1">
+                  Commercial Flooring
+                  <i class="fa-solid fa-chevron-down text-[10px] opacity-70"></i>
+                </span>
+              </a>
+
+              <div class="absolute left-0 top-full hidden pt-3 group-hover:block group-focus-within:block">
+                <div class="w-80 rounded-2xl bg-white/95 backdrop-blur ring-1 ring-slate-900/10 shadow-xl shadow-slate-900/10 p-2">
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/commercial-flooring/">
+                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                      <i class="fa-solid fa-layer-group"></i>
+                    </span>
+                    Commercial Flooring
+                  </a>
+
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/commercial-flooring/concrete-floor-repair/">
+                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                      <i class="fa-solid fa-hammer"></i>
+                    </span>
+                    Concrete Floor Repair
+                  </a>
+
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/commercial-flooring#concrete-floor-repair-guide">
+                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                      <i class="fa-solid fa-book-open"></i>
+                    </span>
+                    Concrete Floor Repair Guide
+                  </a>
+                </div>
+              </div>
+            </li>
+
+            <li><a class="navLink transition" href="/#about">About</a></li>
           </ul>
         </nav>
 
@@ -65,7 +124,7 @@ navbar.innerHTML = `
             0333 344 9598
           </a>
 
-          <a href="/docs/contact/" class="flex items-center gap-2 rounded-2xl pr-4 pl-1.5 py-1.5 text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0" id="ctaBtn">
+          <a href="/#contact" class="flex items-center gap-2 rounded-2xl pr-4 pl-1.5 py-1.5 text-sm font-semibold transition hover:-translate-y-0.5 active:translate-y-0" id="ctaBtn">
             <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl ring-1">
               <i class="fa-solid fa-paper-plane"></i>
             </span>
@@ -96,7 +155,7 @@ navbar.innerHTML = `
     <div class="flex items-center justify-between px-5 py-5">
       <a href="/" class="inline-flex items-center gap-3 shrink-0">
         <img src="/docs/assets/logo.svg" class="h-7" alt="">
-          </a>
+      </a>
 
       <button
         id="closeBtn"
@@ -119,49 +178,70 @@ navbar.innerHTML = `
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/docs/services/">
-              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-layer-group"></i></span>
-              Services
-            </a>
-          </li>
-
-          <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/docs/services/concrete-floor-repair/">
-              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-hammer"></i></span>
-              Concrete Floor Repair
-            </a>
-          </li>
-
-          <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/docs/services/industrial-floor-repair/">
-              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-industry"></i></span>
-              Industrial Floor Repair
-            </a>
-          </li>
-
-          <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/docs/services/warehouse-floor-repair/">
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-warehouse"></i></span>
-              Warehouse Floor Repair
+              Warehouse Flooring
             </a>
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/docs/services/super-flat-vna-flooring/">
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/super-flat-vna-flooring/">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-ruler-combined"></i></span>
               Super-flat VNA Flooring
             </a>
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/docs/resources/">
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring#warehouse-floor-repair-guide">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-book-open"></i></span>
-              Resources
+              Warehouse Floor Repair Guide
             </a>
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/index.html#about">
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/industrial-flooring/">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-industry"></i></span>
+              Industrial Flooring
+            </a>
+          </li>
+
+          <li>
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/industrial-flooring/industrial-floor-repair/">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+              Industrial Floor Repair
+            </a>
+          </li>
+
+          <li>
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/industrial-flooring#industrial-floor-repair-guide">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-book-open"></i></span>
+              Industrial Floor Repair Guide
+            </a>
+          </li>
+
+          <li>
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/commercial-flooring/">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-building"></i></span>
+              Commercial Flooring
+            </a>
+          </li>
+
+          <li>
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/commercial-flooring/concrete-floor-repair/">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-hammer"></i></span>
+              Concrete Floor Repair
+            </a>
+          </li>
+
+          <li>
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/commercial-flooring#concrete-floor-repair-guide">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-book-open"></i></span>
+              Concrete Floor Repair Guide
+            </a>
+          </li>
+
+          <li>
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/#about">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-circle-info"></i></span>
               About
             </a>
@@ -170,7 +250,7 @@ navbar.innerHTML = `
       </nav>
 
       <div class="mt-6 grid gap-2">
-        <a href="/index.html#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#2c4a80] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2c4a80]/20 transition hover:brightness-95">
+        <a href="/#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#2c4a80] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2c4a80]/20 transition hover:brightness-95">
           <i class="fa-solid fa-paper-plane"></i>
           Request a Quote
         </a>
@@ -207,7 +287,7 @@ const setTopStyle = () => {
 };
 
 const setScrolledStyle = () => {
-  if (navContainer) navContainer.className = "mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 transition-all duration-300";
+  if (navContainer) navContainer.className = "mx-auto max-w-[1220px] px-4 sm:px-6 lg:px-8 transition-all duration-300";
   if (navBar) navBar.className = "relative mt-3 flex items-center justify-between rounded-2xl px-3 py-2.5 transition-all duration-300 bg-white/85 ring-1 ring-slate-900/10 shadow-lg shadow-slate-900/10 backdrop-blur";
   if (brandText) brandText.className = "hidden sm:inline text-sm font-semibold tracking-wide text-slate-900";
   navLinks.forEach((a) => (a.className = "navLink inline-flex items-center gap-1 text-slate-800 hover:text-[#2c4a80] transition"));

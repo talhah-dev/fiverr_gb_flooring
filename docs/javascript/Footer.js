@@ -57,10 +57,10 @@ footer.innerHTML = `
           <div>
             <p class="text-sm font-semibold text-white">Services</p>
             <ul class="mt-4 space-y-3 text-sm text-white/75">
-              <li><a class="transition hover:text-white" href="./services/concrete-floor-repair/">Concrete Floor Repair</a></li>
-              <li><a class="transition hover:text-white" href="./services/industrial-floor-repair/">Industrial Floor Repair</a></li>
-              <li><a class="transition hover:text-white" href="./services/warehouse-floor-repair/">Warehouse Floor Repair</a></li>
-              <li><a class="transition hover:text-white" href="./services/super-flat-vna-flooring/">Super-flat VNA Flooring</a></li>
+              <li><a class="transition hover:text-white" href="/commercial-flooring">Concrete Floor Repair</a></li>
+              <li><a class="transition hover:text-white" href="/industrial-flooring">Industrial Floor Repair</a></li>
+              <li><a class="transition hover:text-white" href="/warehouse-flooring">Warehouse Floor Repair</a></li>
+              <li><a class="transition hover:text-white" href="/warehouse-flooring/super-flat-vna-flooring">Super-flat VNA Flooring</a></li>
             </ul>
           </div>
 
