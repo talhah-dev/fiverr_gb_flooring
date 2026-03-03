@@ -36,7 +36,7 @@ navbar.innerHTML = `
                     Super-flat VNA Flooring
                   </a>
 
-                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring#warehouse-floor-repair-guide">
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring/warehouse-floor-repair-guide/">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
                       <i class="fa-solid fa-book-open"></i>
                     </span>
@@ -70,7 +70,7 @@ navbar.innerHTML = `
                     Industrial Floor Repair
                   </a>
 
-                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/industrial-flooring#industrial-floor-repair-guide">
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/industrial-flooring/industrial-floor-repair-guide/">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
                       <i class="fa-solid fa-book-open"></i>
                     </span>
@@ -104,7 +104,7 @@ navbar.innerHTML = `
                     Concrete Floor Repair
                   </a>
 
-                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/commercial-flooring#concrete-floor-repair-guide">
+                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/commercial-flooring/concrete-floor-repair-guide/">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
                       <i class="fa-solid fa-book-open"></i>
                     </span>
@@ -192,7 +192,7 @@ navbar.innerHTML = `
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring#warehouse-floor-repair-guide">
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/warehouse-floor-repair-guide/">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-book-open"></i></span>
               Warehouse Floor Repair Guide
             </a>
@@ -213,7 +213,7 @@ navbar.innerHTML = `
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/industrial-flooring#industrial-floor-repair-guide">
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/industrial-flooring/industrial-floor-repair-guide/">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-book-open"></i></span>
               Industrial Floor Repair Guide
             </a>
@@ -234,7 +234,7 @@ navbar.innerHTML = `
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/commercial-flooring#concrete-floor-repair-guide">
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/commercial-flooring/concrete-floor-repair-guide/">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-book-open"></i></span>
               Concrete Floor Repair Guide
             </a>
