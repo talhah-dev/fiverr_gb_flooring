@@ -37,7 +37,7 @@ operate.innerHTML = `
                                     <i class="fa-solid fa-map"></i>
                                 </span>
                                 <div>
-                                    <p class="text-lg font-semibold text-white">We Operate Across the UK</p>
+                                    <p class="text-lg font-semibold text-white">UK areas</p>
                                     <p class="text-sm text-white/65">Coverage</p>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@ operate.innerHTML = `
                                     <i class="fa-solid fa-warehouse"></i>
                                 </span>
                                 <div>
-                                    <p class="text-lg font-semibold text-white">We Carry Out Floor Repair</p>
+                                    <p class="text-lg font-semibold text-white">Types of sites</p>
                                     <p class="text-sm text-white/65">Sites</p>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@ operate.innerHTML = `
                                     <i class="fa-solid fa-screwdriver-wrench"></i>
                                 </span>
                                 <div>
-                                    <p class="text-lg font-semibold text-white">We Carry Out Interior Works</p>
+                                    <p class="text-lg font-semibold text-white">Types of Works</p>
                                     <p class="text-sm text-white/65">Capabilities</p>
                                 </div>
                             </div>
