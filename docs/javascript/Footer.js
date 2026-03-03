@@ -8,7 +8,7 @@ footer.innerHTML = `
     <div class="grid gap-10 py-14 lg:grid-cols-12">
       <div class="lg:col-span-5">
         <div class="flex items-center gap-3">
-          <img src="/docs/assets/logo.png" class="h-16 invert brightness-0" alt="">
+          <h1 class="text-white font-extrabold text-2xl max-w-xs">GB Industrial Flooring Group</h1>
         </div>
 
         <p class="mt-5 max-w-md text-sm leading-relaxed text-white/75">
