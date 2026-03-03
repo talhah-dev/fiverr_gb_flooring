@@ -154,7 +154,7 @@ navbar.innerHTML = `
   >
     <div class="flex items-center justify-between px-5 py-5">
       <a href="/" class="inline-flex items-center gap-3 shrink-0">
-        <img src="/docs/assets/logo.png" class="h-7" alt="">
+        <img src="/docs/assets/logo.png" class="h-12" alt="">
       </a>
 
       <button
