@@ -55,6 +55,7 @@
         <section class="relative overflow-hidden">
             <div class="relative h-full md:py-20 py-16 min-h-[420px] w-full">
                 <img src="https://images.unsplash.com/photo-1747999060057-89b7a533f347?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    width="1170" height="780"
                     alt="Very narrow aisle warehouse flooring" class="absolute inset-0 h-full w-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/45 to-black/80"></div>
 
@@ -147,6 +148,7 @@
                             class="rounded-3xl border border-slate-200 bg-white shadow-xl overflow-hidden">
                             <div class="relative h-96 w-full">
                                 <img src="https://images.unsplash.com/photo-1689942010216-dc412bb1e7a9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    width="1170" height="780"
                                     alt="VNA warehouse aisle and floor markings"
                                     class="absolute inset-0 h-full w-full object-cover" />
                                 <div
@@ -171,55 +173,86 @@
 
                             <div class="p-6">
                                 <div class="grid gap-4 sm:grid-cols-2">
-                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                                        <div class="flex items-center gap-3">
+                                    <div data-aos="fade-up"
+                                        class="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                                        <div class="flex items-start gap-3">
                                             <span
-                                                class="grid h-10 w-10 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
-                                                <i class="fa-solid fa-ruler"></i>
+                                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                                                <i class="fa-solid fa-ruler-combined"></i>
                                             </span>
                                             <div>
-                                                <p class="text-sm font-semibold text-slate-900">Precision flatness</p>
-                                                <p class="text-xs text-slate-600">VNA routes</p>
+                                                <p class="font-semibold text-slate-900">Precision leveling</p>
+                                                <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                                                    Precision leveling and profiling for VNA travel routes
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                                        <div class="flex items-center gap-3">
+                                    <div data-aos="fade-up" data-aos-delay="50"
+                                        class="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                                        <div class="flex items-start gap-3">
                                             <span
-                                                class="grid h-10 w-10 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
-                                                <i class="fa-solid fa-road"></i>
+                                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                                                <i class="fa-solid fa-triangle-exclamation"></i>
                                             </span>
                                             <div>
-                                                <p class="text-sm font-semibold text-slate-900">Smooth travel</p>
-                                                <p class="text-xs text-slate-600">Reduce vibration</p>
+                                                <p class="font-semibold text-slate-900">Crack &amp; joint repairs</p>
+                                                <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                                                    Crack, joint and pothole repairs in warehouse aisles
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                                        <div class="flex items-center gap-3">
+                                    <div data-aos="fade-up" data-aos-delay="100"
+                                        class="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                                        <div class="flex items-start gap-3">
                                             <span
-                                                class="grid h-10 w-10 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
+                                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                                                <i class="fa-solid fa-grip-lines"></i>
+                                            </span>
+                                            <div>
+                                                <p class="font-semibold text-slate-900">Grinding &amp; preparation
+                                                </p>
+                                                <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                                                    Surface grinding and preparation to tight tolerances
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div data-aos="fade-up" data-aos-delay="150"
+                                        class="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                                        <div class="flex items-start gap-3">
+                                            <span
+                                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
                                                 <i class="fa-solid fa-fill-drip"></i>
                                             </span>
                                             <div>
-                                                <p class="text-sm font-semibold text-slate-900">Coatings &amp; screeds
+                                                <p class="font-semibold text-slate-900">Screeds &amp; coatings
                                                 </p>
-                                                <p class="text-xs text-slate-600">Hard-wearing finish</p>
+                                                <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                                                    Application of specialist screeds and resin coatings
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                                        <div class="flex items-center gap-3">
+                                    <div data-aos="fade-up" data-aos-delay="200"
+                                        class="h-full sm:col-span-2 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                                        <div class="flex items-start gap-3">
                                             <span
-                                                class="grid h-10 w-10 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
-                                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                                                <i class="fa-solid fa-road"></i>
                                             </span>
                                             <div>
-                                                <p class="text-sm font-semibold text-slate-900">Planned works</p>
-                                                <p class="text-xs text-slate-600">Minimise downtime</p>
+                                                <p class="font-semibold text-slate-900">Line marking &amp; demarcation
+                                                </p>
+                                                <p class="mt-1 text-sm leading-relaxed text-slate-600">
+                                                    Line marking, demarcation and durable aisle finishes for VNA
+                                                    operations
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -230,60 +263,6 @@
                             </div>
                         </div>
                     </aside>
-                </div>
-            </div>
-        </section>
-
-        <section class="relative bg-white pb-14 sm:pb-24">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div data-aos="fade-up" class="">
-                    <ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                        <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                            <span
-                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-                            <span class="text-sm leading-relaxed text-slate-700">Precision leveling and profiling for
-                                VNA travel routes</span>
-                        </li>
-
-                        <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                            <span
-                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-                            <span class="text-sm leading-relaxed text-slate-700">Crack, joint and pothole repairs in
-                                warehouse aisles</span>
-                        </li>
-
-                        <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                            <span
-                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-                            <span class="text-sm leading-relaxed text-slate-700">Surface grinding and preparation to
-                                tight tolerances</span>
-                        </li>
-
-                        <li class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                            <span
-                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-                            <span class="text-sm leading-relaxed text-slate-700">Application of specialist screeds and
-                                resin coatings</span>
-                        </li>
-
-                        <li
-                            class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:col-span-2 lg:col-span-2">
-                            <span
-                                class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-2xl bg-white text-[#2c4a80] shadow-sm">
-                                <i class="fa-solid fa-check"></i>
-                            </span>
-                            <span class="text-sm leading-relaxed text-slate-700">Line marking, demarcation and durable
-                                aisle finishes for VNA operations</span>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </section>

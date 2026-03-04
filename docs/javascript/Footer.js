@@ -1,7 +1,7 @@
 const footer = document.getElementById("footer");
 footer.innerHTML = `
 <footer class="relative overflow-hidden bg-slate-950">
-  <img src="https://images.unsplash.com/photo-1687475792136-5035f792730f?q=80&w=1153&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute inset-0 h-full w-full object-cover opacity-30" />
+  <img src="https://images.unsplash.com/photo-1687475792136-5035f792730f?q=80&w=1153&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" width="1153" height="769" alt="" class="absolute inset-0 h-full w-full object-cover opacity-30" />
   <div class="absolute inset-0 bg-black/30"></div>
 
   <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -57,10 +57,9 @@ footer.innerHTML = `
           <div>
             <p class="text-sm font-semibold text-white">Services</p>
             <ul class="mt-4 space-y-3 text-sm text-white/75">
-              <li><a class="transition hover:text-white" href="/commercial-flooring">Concrete Floor Repair</a></li>
-              <li><a class="transition hover:text-white" href="/industrial-flooring">Industrial Floor Repair</a></li>
-              <li><a class="transition hover:text-white" href="/warehouse-flooring">Warehouse Floor Repair</a></li>
-              <li><a class="transition hover:text-white" href="/warehouse-flooring/super-flat-vna-flooring">Super-flat VNA Flooring</a></li>
+              <li><a class="transition hover:text-white" href="/warehouse-flooring/">Warehouse Flooring</a></li>
+              <li><a class="transition hover:text-white" href="/industrial-flooring/">Industrial Flooring</a></li>
+              <li><a class="transition hover:text-white" href="/commercial-flooring/">Commercial Flooring</a></li>
             </ul>
           </div>
 

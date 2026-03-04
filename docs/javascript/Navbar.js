@@ -5,7 +5,7 @@ navbar.innerHTML = `
     <div id="navContainer" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 transition-all duration-300">
       <div id="navBar" class="relative mt-3 flex items-center justify-between rounded-2xl px-3 py-2.5 transition-all duration-300">
         <a href="/" class="inline-flex items-center gap-3 shrink-0">
-          <img src="/docs/assets/logo.png" class="h-12" alt="">
+          <img src="/docs/assets/logo.png" height="323" class="h-12" alt="">
         </a>
 
         <nav class="hidden md:block">
@@ -154,7 +154,7 @@ navbar.innerHTML = `
   >
     <div class="flex items-center justify-between px-5 py-5">
       <a href="/" class="inline-flex items-center gap-3 shrink-0">
-        <img src="/docs/assets/logo.png" class="h-12" alt="">
+        <img src="/docs/assets/logo.png" height="323" class="h-12" alt="">
       </a>
 
       <button
