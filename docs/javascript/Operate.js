@@ -9,18 +9,18 @@ operate.innerHTML = `
             <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <div data-aos="zoom-in"
+                        <div
                             class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[#9bb4e6] backdrop-blur">
                             <i class="fa-solid fa-list-ul"></i>
                             <span class="text-sm font-semibold tracking-wide">At a glance</span>
                         </div>
 
-                        <h2 data-aos="fade-up" data-aos-delay="100"
+                        <h2
                             class="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
                             Nationwide flooring services for busy sites
                         </h2>
 
-                        <p data-aos="fade-up" data-aos-delay="200"
+                        <p
                             class="mt-3 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
                             Where we operate, who we support, and what we deliver across commercial and industrial
                             environments.
@@ -29,7 +29,7 @@ operate.innerHTML = `
                 </div>
 
                 <div class="mt-10 grid gap-5 lg:grid-cols-12">
-                    <div data-aos="fade-up" class="lg:col-span-4">
+                    <div class="lg:col-span-4">
                         <div class="h-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
                             <div class="flex items-center gap-3">
                                 <span
@@ -67,7 +67,7 @@ operate.innerHTML = `
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" data-aos-delay="50" class="lg:col-span-4">
+                    <div class="lg:col-span-4">
                         <div class="h-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
                             <div class="flex items-center gap-3">
                                 <span
@@ -105,7 +105,7 @@ operate.innerHTML = `
                         </div>
                     </div>
 
-                    <div data-aos="fade-up" data-aos-delay="100" class="lg:col-span-4">
+                    <div class="lg:col-span-4">
                         <div class="h-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
                             <div class="flex items-center gap-3">
                                 <span

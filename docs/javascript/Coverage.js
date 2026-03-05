@@ -9,24 +9,24 @@ coverage.innerHTML = `
             <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <div data-aos="zoom-in"
+                        <div
                             class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[#2c4a80] shadow-sm">
                             <i class="fa-solid fa-map-location-dot"></i>
                             <span class="text-sm font-semibold tracking-wide">UK Coverage</span>
                         </div>
 
-                        <h2 data-aos="fade-up" data-aos-delay="100"
+                        <h2
                             class="mt-4 text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
                             We carry out industrial concrete flooring projects across the UK
                         </h2>
 
-                        <p data-aos="fade-up" data-aos-delay="200"
+                        <p
                             class="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
                             Nationwide support for commercial and industrial sites across England &amp; Wales.
                         </p>
                     </div>
 
-                    <div data-aos="fade-up" data-aos-delay="250"
+                    <div
                         class="hidden sm:flex items-center gap-3 text-slate-700">
                         <span
                             class="grid h-10 w-10 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80] border border-[#2c4a80]/10">
@@ -40,7 +40,7 @@ coverage.innerHTML = `
                 </div>
 
                 <div class="mt-10 grid gap-5 lg:grid-cols-12">
-                    <div data-aos="fade-up" class="lg:col-span-5">
+                    <div class="lg:col-span-5">
                         <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                             <div class="flex items-start gap-3">
                                 <span
@@ -77,7 +77,7 @@ coverage.innerHTML = `
                     </div>
 
                     <div class="lg:col-span-7">
-                        <div data-aos="fade-up" data-aos-delay="100"
+                        <div
                             class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                                 <div>
