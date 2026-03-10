@@ -30,7 +30,7 @@ operate.innerHTML = `
 
                 <div class="mt-10 grid gap-5 lg:grid-cols-12">
                     <div class="lg:col-span-4">
-                        <div class="h-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+                        <div class="h-full rounded-3xl md:pl-14 border border-white/10 bg-white/5 p-6 backdrop-blur">
                             <div class="flex items-center gap-3">
                                 <span
                                     class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#2c4a80]/25 text-[#9bb4e6]">

@@ -77,52 +77,28 @@ if (contact) {
                                 </div>
                             </div>
 
-                            <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-                                <div
-                                    class="flex items-center justify-between border-b border-slate-200 bg-white px-5 py-4">
-                                    <p class="text-sm font-semibold text-slate-900">We work across</p>
-                                    <span class="text-xs font-semibold text-[#2c4a80]">UK</span>
-                                </div>
-                                <div class="grid gap-3 p-5 sm:grid-cols-2 lg:grid-cols-1">
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        North West
+                            <div class="mt-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
+                                <div class="relative min-h-[325px]">
+                                    <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        width="1172" height="781"
+                                        alt="Industrial concrete flooring inside a warehouse"
+                                        class="absolute inset-0 h-full w-full object-cover" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/25 to-transparent"></div>
+
+                                    <div
+                                        class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-white backdrop-blur">
+                                        <i class="fa-solid fa-map-location-dot text-xs"></i>
+                                        <span class="text-xs font-semibold">England &amp; Wales</span>
                                     </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        North East
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        Yorkshire
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        East Midlands
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        West Midlands
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        East of England
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        South East
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        South West
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        London
-                                    </div>
-                                    <div class="flex items-center gap-2 text-sm text-slate-700">
-                                        <span class="h-2 w-2 rounded-full bg-[#2c4a80]"></span>
-                                        Wales
+
+                                    <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                                        <p class="text-[11px] font-semibold tracking-[0.3em] text-white/75">GB FLOORING GROUP</p>
+                                        <p class="mt-2 max-w-[16rem] text-xl font-semibold leading-tight text-white">
+                                            Concrete floor installation, repairs &amp; coatings
+                                        </p>
+                                        <p class="mt-2 max-w-[17rem] text-sm leading-relaxed text-white/85">
+                                            Planned support for warehouses, factories and commercial sites nationwide.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
