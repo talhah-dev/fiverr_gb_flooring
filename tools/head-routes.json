@@ -1,0 +1,50 @@
+{
+  "index.html": {
+    "canonicalPath": "/",
+    "ogPath": "/"
+  },
+  "commercial-flooring/index.html": {
+    "canonicalPath": "/commercial-flooring/",
+    "ogPath": "/commercial-flooring/"
+  },
+  "commercial-flooring/concrete-floor-repair/index.html": {
+    "canonicalPath": "/commercial-flooring/",
+    "ogPath": "/commercial-flooring/concrete-floor-repair/"
+  },
+  "commercial-flooring/concrete-floor-repair-guide/index.html": {
+    "canonicalPath": "/commercial-flooring/concrete-floor-repair-guide/",
+    "ogPath": "/commercial-flooring/concrete-floor-repair-guide/"
+  },
+  "industrial-flooring/index.html": {
+    "canonicalPath": "/industrial-flooring/",
+    "ogPath": "/industrial-flooring/"
+  },
+  "industrial-flooring/industrial-floor-repair/index.html": {
+    "canonicalPath": "/industrial-flooring/",
+    "ogPath": "/industrial-flooring/industrial-floor-repair/"
+  },
+  "industrial-flooring/industrial-floor-repair-guide/index.html": {
+    "canonicalPath": "/industrial-flooring/industrial-floor-repair-guide/",
+    "ogPath": "/industrial-flooring/industrial-floor-repair-guide/"
+  },
+  "warehouse-flooring/index.html": {
+    "canonicalPath": "/warehouse-flooring/",
+    "ogPath": "/warehouse-flooring/"
+  },
+  "warehouse-flooring/super-flat-vna-flooring/index.html": {
+    "canonicalPath": "/warehouse-flooring/super-flat-vna-flooring/",
+    "ogPath": "/warehouse-flooring/super-flat-vna-flooring/"
+  },
+  "warehouse-flooring/warehouse-floor-repair-guide/index.html": {
+    "canonicalPath": "/warehouse-flooring/warehouse-floor-repair-guide/",
+    "ogPath": "/warehouse-flooring/warehouse-floor-repair-guide/"
+  },
+  "docs/resources/index.html": {
+    "canonicalPath": "/docs/resources/",
+    "ogPath": "/docs/resources/"
+  },
+  "thank-you/index.html": {
+    "canonicalPath": "/thank-you/",
+    "ogPath": "/thank-you/"
+  }
+}

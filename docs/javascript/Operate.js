@@ -29,43 +29,7 @@ operate.innerHTML = `
                 </div>
 
                 <div class="mt-10 grid gap-5 lg:grid-cols-12">
-                    <div class="lg:col-span-4">
-                        <div class="h-full rounded-3xl md:pl-14 border border-white/10 bg-white/5 p-6 backdrop-blur">
-                            <div class="flex items-center gap-3">
-                                <span
-                                    class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#2c4a80]/25 text-[#9bb4e6]">
-                                    <i class="fa-solid fa-map"></i>
-                                </span>
-                                <div>
-                                    <p class="text-lg font-semibold text-white">UK areas</p>
-                                    <p class="text-sm text-white/65">Coverage</p>
-                                </div>
-                            </div>
-
-                            <ul class="mt-6 space-y-3 text-white/80">
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
-                                    <span>North-West of England</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
-                                    <span>North-East of England</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
-                                    <span>East &amp; West Midlands</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
-                                    <span>London &amp; Home Counties</span>
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
-                                    <span>South &amp; South-West of England</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                   
 
                     <div class="lg:col-span-4">
                         <div class="h-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
@@ -150,6 +114,45 @@ operate.innerHTML = `
                                 <li class="flex items-start gap-3">
                                     <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
                                     <span>Demarcation and Line-painting</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                     <div class="lg:col-span-4">
+                        <div class="h-full rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+                            <div class="flex items-center gap-3">
+                                <span
+                                    class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#2c4a80]/25 text-[#9bb4e6]">
+                                    <i class="fa-solid fa-map"></i>
+                                </span>
+                                <div>
+                                    <p class="text-lg font-semibold text-white">UK areas</p>
+                                    <p class="text-sm text-white/65">Coverage</p>
+                                </div>
+                            </div>
+
+                            <ul class="mt-6 space-y-3 text-white/80">
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
+                                    <span>North-West of England</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
+                                    <span>North-East of England</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
+                                    <span>East &amp; West Midlands</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
+                                    <span>London &amp; Home Counties</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="mt-1 h-2 w-2 rounded-full bg-[#9bb4e6]"></span>
+                                    <span>South &amp; South-West of England</span>
                                 </li>
                             </ul>
                         </div>

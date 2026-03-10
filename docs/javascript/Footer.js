@@ -16,9 +16,9 @@ footer.innerHTML = `
         </p>
 
         <div class="mt-6 flex flex-wrap items-center gap-3">
-          <a href="mailto:enquiry@gbflooringgroup.com" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/10">
+          <a href="mailto:enquiry@industrialfloorcontractors.co.uk" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/10">
             <i class="fa-solid fa-envelope text-[#9bb4e6]"></i>
-            enquiry@gbflooringgroup.com
+            enquiry@industrialfloorcontractors.co.uk
           </a>
           <a href="tel:03333449598" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white/90 backdrop-blur transition hover:bg-white/10">
             <i class="fa-solid fa-phone text-[#9bb4e6]"></i>

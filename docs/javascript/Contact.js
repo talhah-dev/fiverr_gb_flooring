@@ -28,19 +28,19 @@ if (contact) {
                 </div>
 
                 <div class="mt-10 grid gap-6 lg:grid-cols-12">
-                    <div class="lg:col-span-4">
-                        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div class="min-w-0 lg:col-span-4">
+                        <div class="min-w-0 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                             <div class="flex items-start gap-3">
                                 <span
                                     class="mt-0.5 grid h-11 w-11 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80]">
                                     <i class="fa-solid fa-at"></i>
                                 </span>
-                                <div>
+                                <div class="min-w-0">
                                     <p class="text-sm font-semibold text-slate-900">E-mail Us</p>
-                                    <a href="mailto:enquiry@gbflooringgroup.com"
-                                        class="mt-1 inline-flex items-center gap-2 text-sm font-medium text-[#2c4a80] hover:underline">
-                                        enquiry@gbflooringgroup.com
-                                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                    <a href="mailto:enquiry@industrialfloorcontractors.co.uk"
+                                        class="mt-1 flex max-w-full items-start gap-2 text-sm font-medium text-[#2c4a80] hover:underline">
+                                        <span class="min-w-0 break-all">enquiry@industrialfloorcontractors.co.uk</span>
+                                        <i class="fa-solid fa-arrow-up-right-from-square mt-0.5 shrink-0 text-xs"></i>
                                     </a>
                                 </div>
                             </div>
@@ -105,9 +105,9 @@ if (contact) {
                         </div>
                     </div>
 
-                    <div class="lg:col-span-8">
+                    <div class="min-w-0 lg:col-span-8">
                         <div
-                            class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+                            class="min-w-0 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
                             <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                                 <div class="flex md:items-center gap-3">
                                     <span
@@ -130,35 +130,37 @@ if (contact) {
 
                             <form data-contact-form action="https://api.web3forms.com/submit" method="POST" class="mt-8 grid gap-4 sm:grid-cols-2">
                                 <input type="hidden" name="access_key" value="67b52011-4311-412a-8f8c-bb3b879a1298" />
+                                <input type="hidden" name="redirect" value="https://industrialfloorcontractors.co.uk/thank-you/" />
+                                <input type="hidden" name="submission_url" value="" data-contact-url-field />
                                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
-                                <div class="sm:col-span-2">
+                                <div class="min-w-0 sm:col-span-2">
                                     <label class="text-sm font-semibold text-slate-700">Name <span
                                             class="text-[#2c4a80]">*</span></label>
                                     <input type="text" name="name" required placeholder="Enter name"
                                         class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#2c4a80]/40 focus:ring-2 focus:ring-[#2c4a80]/15" />
                                 </div>
 
-                                <div>
+                                <div class="min-w-0">
                                     <label class="text-sm font-semibold text-slate-700">Email <span
                                             class="text-[#2c4a80]">*</span></label>
                                     <input type="email" name="email" required placeholder="Enter email"
                                         class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#2c4a80]/40 focus:ring-2 focus:ring-[#2c4a80]/15" />
                                 </div>
 
-                                <div>
+                                <div class="min-w-0">
                                     <label class="text-sm font-semibold text-slate-700">Phone (optional)</label>
                                     <input type="tel" name="phone" placeholder="Enter phone number"
                                         class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#2c4a80]/40 focus:ring-2 focus:ring-[#2c4a80]/15" />
                                 </div>
 
-                                <div class="sm:col-span-2">
+                                <div class="min-w-0 sm:col-span-2">
                                     <label class="text-sm font-semibold text-slate-700">Company <span
                                             class="text-[#2c4a80]">*</span></label>
                                     <input type="text" name="company" required placeholder="Enter company"
                                         class="mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#2c4a80]/40 focus:ring-2 focus:ring-[#2c4a80]/15" />
                                 </div>
 
-                                <div class="sm:col-span-2">
+                                <div class="min-w-0 sm:col-span-2">
                                     <label class="text-sm font-semibold text-slate-700">Message <span
                                             class="text-[#2c4a80]">*</span></label>
                                     <textarea name="message" rows="6" required placeholder="Enter your message here..."
@@ -185,8 +187,13 @@ if (contact) {
   const contactForm = contact.querySelector("[data-contact-form]");
   const contactSubmitButton = contact.querySelector("[data-contact-submit]");
   const contactFeedback = contact.querySelector("[data-contact-feedback]");
+  const contactUrlField = contact.querySelector("[data-contact-url-field]");
 
   if (contactForm && contactSubmitButton && contactFeedback) {
+    if (contactUrlField) {
+      contactUrlField.value = window.location.href;
+    }
+
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
@@ -198,6 +205,12 @@ if (contact) {
 
       try {
         const formData = new FormData(contactForm);
+
+        if (contactUrlField) {
+          contactUrlField.value = window.location.href;
+          formData.set("submission_url", contactUrlField.value);
+        }
+
         const response = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: {
@@ -208,10 +221,8 @@ if (contact) {
         const result = await response.json();
 
         if (response.ok && result.success) {
-          contactForm.reset();
-          contactFeedback.classList.remove("text-slate-600", "text-red-600");
-          contactFeedback.classList.add("text-green-700");
-          contactFeedback.textContent = "Message submitted successfully.";
+          window.location.assign("/thank-you/");
+          return;
         } else {
           contactFeedback.classList.remove("text-slate-600", "text-green-700");
           contactFeedback.classList.add("text-red-600");
