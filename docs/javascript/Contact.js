@@ -128,9 +128,7 @@ if (contact) {
                                 </div>
                             </div>
 
-                            <form data-contact-form action="https://api.web3forms.com/submit" method="POST" class="mt-8 grid gap-4 sm:grid-cols-2">
-                                <input type="hidden" name="access_key" value="67b52011-4311-412a-8f8c-bb3b879a1298" />
-                                <input type="hidden" name="redirect" value="https://industrialfloorcontractors.co.uk/thank-you/" />
+                            <form data-contact-form action="/contact-submit.php" method="POST" class="mt-8 grid gap-4 sm:grid-cols-2">
                                 <input type="hidden" name="submission_url" value="" data-contact-url-field />
                                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
                                 <div class="min-w-0 sm:col-span-2">
@@ -211,7 +209,7 @@ if (contact) {
           formData.set("submission_url", contactUrlField.value);
         }
 
-        const response = await fetch("https://api.web3forms.com/submit", {
+        const response = await fetch(contactForm.action, {
           method: "POST",
           headers: {
             Accept: "application/json",
