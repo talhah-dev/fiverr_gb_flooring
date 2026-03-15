@@ -32,7 +32,7 @@ if (contact) {
                         <div class="min-w-0 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
                             <div class="flex items-start gap-3">
                                 <span
-                                    class="mt-0.5 grid h-11 w-11 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80]">
+                                    class="mt-0.5 grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80]">
                                     <i class="fa-solid fa-at"></i>
                                 </span>
                                 <div class="min-w-0">
