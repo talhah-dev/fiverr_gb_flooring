@@ -1,6 +1,40 @@
 const contact = document.getElementById("contact");
 
 if (contact) {
+  const getConfigValue = (key, fallback) => {
+    const value = contact.dataset[key];
+    return value && value.trim() ? value.trim() : fallback;
+  };
+
+  const contactConfig = {
+    eyebrow: getConfigValue("contactEyebrow", "Contact"),
+    heading: getConfigValue("contactHeading", "Contact Us Now"),
+    intro: getConfigValue(
+      "contactIntro",
+      "Use one of the following contact methods to arrange a free consultation & quotation."
+    ),
+    regionTitle: getConfigValue("contactRegionTitle", "Nationwide service"),
+    regionText: getConfigValue(
+      "contactRegionText",
+      "We work across all regions of England & Wales."
+    ),
+    imageBadge: getConfigValue("contactImageBadge", "England & Wales"),
+    imageTitle: getConfigValue(
+      "contactImageTitle",
+      "Concrete floor installation, repairs & coatings"
+    ),
+    imageText: getConfigValue(
+      "contactImageText",
+      "Planned support for warehouses, factories and commercial sites nationwide."
+    ),
+    formTitle: getConfigValue("contactFormTitle", "Complete Our Contact Form"),
+    formText: getConfigValue(
+      "contactFormText",
+      "Please complete and we will be in touch as soon as possible."
+    ),
+    regionFieldValue: getConfigValue("contactRegionField", ""),
+  };
+
   contact.innerHTML = `
         <section id="contact" class="relative overflow-hidden bg-white py-16 sm:py-20">
             <div class="absolute inset-0 -z-10">
@@ -14,15 +48,15 @@ if (contact) {
                         <div
                             class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[#2c4a80] shadow-sm">
                             <i class="fa-solid fa-envelope"></i>
-                            <span class="text-sm font-semibold tracking-wide">Contact</span>
+                            <span class="text-sm font-semibold tracking-wide">${contactConfig.eyebrow}</span>
                         </div>
                         <h2
                             class="mt-4 text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
-                            Contact Us Now
+                            ${contactConfig.heading}
                         </h2>
                         <p
                             class="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                            Use one of the following contact methods to arrange a free consultation &amp; quotation.
+                            ${contactConfig.intro}
                         </p>
                     </div>
                 </div>
@@ -69,9 +103,9 @@ if (contact) {
                                         <i class="fa-solid fa-map-location-dot"></i>
                                     </span>
                                     <div>
-                                        <p class="font-semibold text-slate-900">Nationwide service</p>
+                                        <p class="font-semibold text-slate-900">${contactConfig.regionTitle}</p>
                                         <p class="mt-1 text-sm leading-relaxed text-slate-600">
-                                            We work across all regions of England &amp; Wales.
+                                            ${contactConfig.regionText}
                                         </p>
                                     </div>
                                 </div>
@@ -88,16 +122,16 @@ if (contact) {
                                     <div
                                         class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-white backdrop-blur">
                                         <i class="fa-solid fa-map-location-dot text-xs"></i>
-                                        <span class="text-xs font-semibold">England &amp; Wales</span>
+                                        <span class="text-xs font-semibold">${contactConfig.imageBadge}</span>
                                     </div>
 
                                     <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
                                         <p class="text-[11px] font-semibold tracking-[0.3em] text-white/75">GB FLOORING GROUP</p>
                                         <p class="mt-2 max-w-[16rem] text-xl font-semibold leading-tight text-white">
-                                            Concrete floor installation, repairs &amp; coatings
+                                            ${contactConfig.imageTitle}
                                         </p>
                                         <p class="mt-2 max-w-[17rem] text-sm leading-relaxed text-white/85">
-                                            Planned support for warehouses, factories and commercial sites nationwide.
+                                            ${contactConfig.imageText}
                                         </p>
                                     </div>
                                 </div>
@@ -115,9 +149,8 @@ if (contact) {
                                         <i class="fa-solid fa-comment-dots"></i>
                                     </span>
                                     <div>
-                                        <p class="text-lg font-semibold text-slate-900">Complete Our Contact Form</p>
-                                        <p class="text-sm text-slate-600">Please complete and we will be in touch as
-                                            soon as possible.</p>
+                                        <p class="text-lg font-semibold text-slate-900">${contactConfig.formTitle}</p>
+                                        <p class="text-sm text-slate-600">${contactConfig.formText}</p>
                                     </div>
                                 </div>
 
@@ -130,6 +163,7 @@ if (contact) {
 
                             <form data-contact-form action="/contact-submit.php" method="POST" class="mt-8 grid gap-4 sm:grid-cols-2">
                                 <input type="hidden" name="submission_url" value="" data-contact-url-field />
+                                <input type="hidden" name="page_region" value="${contactConfig.regionFieldValue}" data-contact-region-field />
                                 <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
                                 <div class="min-w-0 sm:col-span-2">
                                     <label class="text-sm font-semibold text-slate-700">Name <span
@@ -186,10 +220,15 @@ if (contact) {
   const contactSubmitButton = contact.querySelector("[data-contact-submit]");
   const contactFeedback = contact.querySelector("[data-contact-feedback]");
   const contactUrlField = contact.querySelector("[data-contact-url-field]");
+  const contactRegionField = contact.querySelector("[data-contact-region-field]");
 
   if (contactForm && contactSubmitButton && contactFeedback) {
     if (contactUrlField) {
       contactUrlField.value = window.location.href;
+    }
+
+    if (contactRegionField) {
+      contactRegionField.value = contactConfig.regionFieldValue;
     }
 
     contactForm.addEventListener("submit", async (event) => {
@@ -207,6 +246,10 @@ if (contact) {
         if (contactUrlField) {
           contactUrlField.value = window.location.href;
           formData.set("submission_url", contactUrlField.value);
+        }
+
+        if (contactRegionField) {
+          formData.set("page_region", contactRegionField.value);
         }
 
         const response = await fetch(contactForm.action, {
