@@ -446,13 +446,13 @@
                 });
             });
 
-            const setMapShapeStyle = (shape, fill, stroke, strokeWidth, opacity) => {
+            const setMapShapeStyle = (shape, fill, opacity) => {
                 shape.style.setProperty("fill", fill, "important");
-                shape.style.setProperty("stroke", stroke, "important");
-                shape.style.setProperty("stroke-width", strokeWidth, "important");
+                shape.style.setProperty("stroke", "none", "important");
+                shape.style.setProperty("stroke-width", "0", "important");
                 shape.style.setProperty("opacity", opacity, "important");
                 shape.style.setProperty("cursor", "pointer");
-                shape.style.setProperty("transition", "fill 180ms ease, stroke 180ms ease, opacity 180ms ease, filter 180ms ease");
+                shape.style.setProperty("transition", "fill 180ms ease, opacity 180ms ease, filter 180ms ease");
             };
 
             const updateMapSelection = () => {
@@ -460,25 +460,16 @@
 
                 mapSvg.querySelectorAll("path[id^='GB-UK']").forEach((shape) => {
                     const regionKey = mapIdToRegionKey[shape.id];
-                    if (!regionKey) {
-                        shape.style.setProperty("fill", "#d8e2ee", "important");
-                        shape.style.setProperty("stroke", "#ffffff", "important");
-                        shape.style.setProperty("stroke-width", "0.9", "important");
-                        shape.style.setProperty("opacity", "0.55", "important");
-                        shape.style.setProperty("filter", "none");
-                        return;
-                    }
+                    if (!regionKey) return;
 
                     const region = regionContent[regionKey];
                     const active = currentRegionKey === regionKey;
                     setMapShapeStyle(
                         shape,
                         active ? region.mapActiveColor : region.mapColor,
-                        active ? "#0f172a" : "#ffffff",
-                        active ? "2" : "1.15",
-                        active ? "1" : "0.92"
+                        active ? "1" : "0.94"
                     );
-                    shape.style.setProperty("filter", active ? "drop-shadow(0 10px 18px rgba(15,23,42,0.16))" : "none");
+                    shape.style.setProperty("filter", "none");
                 });
             };
 
@@ -581,6 +572,7 @@
 </body>
 
 </html>
+
 
 
 
