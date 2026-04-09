@@ -6,6 +6,17 @@ if (contact) {
     return value && value.trim() ? value.trim() : fallback;
   };
 
+  const getTemplateHtml = (...selectors) => {
+    for (const selector of selectors) {
+      const template = contact.querySelector(selector);
+      if (template && template.innerHTML.trim()) {
+        return template.innerHTML.trim();
+      }
+    }
+
+    return "";
+  };
+
   const contactConfig = {
     eyebrow: getConfigValue("contactEyebrow", "Contact"),
     heading: getConfigValue("contactHeading", "Contact Us Now"),
@@ -33,6 +44,10 @@ if (contact) {
       "Please complete and we will be in touch as soon as possible."
     ),
     regionFieldValue: getConfigValue("contactRegionField", ""),
+    ctaDetailsHtml: getTemplateHtml(
+      "template[data-contact-cta-details]",
+      "template[data-contact-form-details]"
+    ),
   };
 
   contact.innerHTML = `
@@ -160,6 +175,10 @@ if (contact) {
                                     Secure submission
                                 </div>
                             </div>
+
+                            ${contactConfig.ctaDetailsHtml
+                              ? `<div class="mt-6" data-contact-cta-details-wrapper>${contactConfig.ctaDetailsHtml}</div>`
+                              : ""}
 
                             <form data-contact-form action="/contact-submit.php" method="POST" class="mt-8 grid gap-4 sm:grid-cols-2">
                                 <input type="hidden" name="submission_url" value="" data-contact-url-field />

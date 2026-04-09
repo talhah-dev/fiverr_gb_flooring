@@ -10,21 +10,20 @@ if (servicePartials.length) {
       .replace(/'/g, "&#39;");
 
   const renderShowcaseCard = (card) => `
-    <article class="overflow-hidden rounded-[1.6rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-      <div class="relative aspect-[16/10] w-full overflow-hidden">
+    <article class="bg-white transition hover:-translate-y-1">
+      <div class="relative h-[20rem] w-full overflow-hidden rounded-[1.6rem]">
         <img src="${escapeHtml(card.image)}"
           width="1170" height="780" alt="${escapeHtml(card.alt)}"
           class="absolute inset-0 h-full w-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-slate-900/10 to-transparent"></div>
-      </div>
-      <div class="p-4">
-        <div class="flex items-start gap-3">
-          <span class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80]">
-            <i class="${escapeHtml(card.icon)}"></i>
-          </span>
-          <div>
-            <p class="text-sm font-semibold text-slate-900">${escapeHtml(card.title)}</p>
-            <p class="mt-1 text-xs leading-relaxed text-slate-600">${escapeHtml(card.text)}</p>
+        <div class="absolute inset-x-3 bottom-3 rounded-[1.35rem] border border-white/60 bg-white/78 p-4 shadow-lg shadow-slate-900/10 backdrop-blur-md sm:inset-x-4 sm:bottom-4">
+          <div class="flex items-start gap-3">
+            <span class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80]">
+              <i class="${escapeHtml(card.icon)}"></i>
+            </span>
+            <div>
+              <p class="text-lg font-semibold leading-tight text-slate-900">${escapeHtml(card.title)}</p>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600">${escapeHtml(card.text)}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -98,20 +97,21 @@ if (servicePartials.length) {
 
           <div class="lg:col-span-8">
             <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
-              <div class="relative aspect-[16/9] w-full">
+              <div class="relative h-[16rem] w-full sm:h-[19rem] md:h-[24rem]">
                 <img src="${escapeHtml(config.hero.image)}" width="1170" height="780" alt="${escapeHtml(config.hero.alt)}" class="absolute inset-0 h-full w-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/78 via-slate-900/46 to-slate-900/10"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/18"></div>
 
-                <div class="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-white backdrop-blur">
+                <div class="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/12 px-3 py-2 text-white shadow-lg shadow-black/10 backdrop-blur-sm">
                   <i class="${escapeHtml(config.hero.badgeIcon)}"></i>
                   <span class="text-xs font-semibold">${escapeHtml(config.hero.badgeText)}</span>
                 </div>
+              </div>
 
-                <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-                  <p class="text-xs font-semibold tracking-widest text-white/80">${escapeHtml(config.hero.kicker)}</p>
-                  <p class="mt-2 text-2xl font-semibold text-white sm:text-[1.75rem]">${escapeHtml(config.hero.title)}</p>
-                  <p class="mt-2 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-base">${escapeHtml(config.hero.text)}</p>
-                </div>
+              <div class="border-t border-slate-200 bg-white px-5 py-5 sm:px-8 sm:py-6 lg:px-10">
+                <p class="text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-slate-500 sm:text-[0.75rem]">${escapeHtml(config.hero.kicker)}</p>
+                <p class="mt-2 max-w-4xl text-[1.5rem] font-semibold leading-tight text-slate-900 sm:text-[2rem] lg:text-[2.35rem]">${escapeHtml(config.hero.title)}</p>
+                <p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600 sm:text-base">${escapeHtml(config.hero.text)}</p>
               </div>
             </div>
           </div>
@@ -227,11 +227,11 @@ if (servicePartials.length) {
         text: "Repairs to defects in the concrete slab and surface renovation using specialist resin coatings, screeds and paints."
       },
       cards: [
-        { image: "/docs/assets/img2.jpg", alt: "Floor joint repair services", icon: "fa-solid fa-arrows-left-right-to-line", title: "Floor joint repairs", text: "Filling and stabilisation of damaged concrete floor joints" },
-        { image: "/docs/assets/img1.jpg", alt: "Crack and pothole repair services", icon: "fa-solid fa-triangle-exclamation", title: "Crack & pothole repairs", text: "Concrete flooring crack and pothole repairs" },
-        { image: "/docs/assets/img3.jpg", alt: "Grinding and cleaning services", icon: "fa-solid fa-grip-lines", title: "Grinding & cleaning", text: "Concrete surface grinding and cleaning" },
-        { image: "/docs/assets/img4.jpg", alt: "Screeds and resin coatings services", icon: "fa-solid fa-fill-drip", title: "Screeds & resin coatings", text: "Application of liquid screeds and epoxy resin floor coatings" },
-        { image: "/docs/assets/img5.jpg", alt: "Floor painting and marking services", icon: "fa-solid fa-paint-roller", title: "Floor painting & markings", text: "Painting of factory and warehouse floors including markings and walkways" }
+        { image: "/docs/assets/img6.jpg", alt: "Floor joint repair services", icon: "fa-solid fa-arrows-left-right-to-line", title: "Floor joint repairs", text: "Filling and stabilisation of damaged concrete floor joints" },
+        { image: "/docs/assets/img7.jpg", alt: "Crack and pothole repair services", icon: "fa-solid fa-triangle-exclamation", title: "Crack & pothole repairs", text: "Concrete flooring crack and pothole repairs" },
+        { image: "/docs/assets/img8.jpg", alt: "Grinding and cleaning services", icon: "fa-solid fa-grip-lines", title: "Grinding & cleaning", text: "Concrete surface grinding and cleaning" },
+        { image: "/docs/assets/img9.jpg", alt: "Screeds and resin coatings services", icon: "fa-solid fa-fill-drip", title: "Screeds & resin coatings", text: "Application of liquid screeds and epoxy resin floor coatings" },
+        { image: "/docs/assets/img10.jpg", alt: "Floor painting and marking services", icon: "fa-solid fa-paint-roller", title: "Floor painting & markings", text: "Painting of factory and warehouse floors including markings and walkways" }
       ]
     },
     warehouse: {

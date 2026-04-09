@@ -2,6 +2,17 @@
   const sourcePath = document.documentElement.getAttribute("data-page-alias-source");
   if (!sourcePath) return;
 
+  const aliasContactDataset = Array.from(document.documentElement.attributes)
+    .filter((attr) => attr.name.startsWith("data-contact-"))
+    .map((attr) => ({
+      name: attr.name,
+      value: attr.value,
+    }));
+
+  const aliasContactTemplate = document.body.querySelector(
+    "template[data-contact-cta-details], template[data-contact-form-details]"
+  );
+
   const sourceUrl = new URL(sourcePath, window.location.origin);
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
   const sourceCanonicalPath = sourceUrl.pathname.replace(/\/+$/, "") || "/";
@@ -22,6 +33,17 @@
     }
 
     document.body.innerHTML = sourceBody.innerHTML;
+
+    const importedContact = document.body.querySelector("#contact");
+    if (importedContact) {
+      aliasContactDataset.forEach(({ name, value }) => {
+        importedContact.setAttribute(name, value);
+      });
+
+      if (aliasContactTemplate) {
+        importedContact.appendChild(aliasContactTemplate.cloneNode(true));
+      }
+    }
 
     // Re-run scripts from the imported body in order.
     const scripts = Array.from(document.body.querySelectorAll("script"));
