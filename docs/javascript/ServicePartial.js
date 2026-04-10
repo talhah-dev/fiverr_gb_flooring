@@ -45,7 +45,7 @@ if (servicePartials.length) {
   `;
 
   const renderShowcase = (config) => `
-    <section class="relative overflow-hidden bg-white pb-16 pt-8 sm:pb-20 sm:pt-12">
+    <section ${config.sectionId ? `id="${escapeHtml(config.sectionId)}"` : ""} class="relative overflow-hidden bg-white pb-16 pt-8 sm:pb-20 sm:pt-12">
       <div class="absolute inset-0 -z-10">
         <div class="absolute -top-24 left-10 h-72 w-72 rounded-full bg-[#2c4a80]/10 blur-3xl"></div>
         <div class="absolute -bottom-24 right-10 h-72 w-72 rounded-full bg-[#2c4a80]/6 blur-3xl"></div>
@@ -117,7 +117,7 @@ if (servicePartials.length) {
           </div>
         </div>
 
-        <div class="mt-8 border-t border-slate-200/80 pt-8">
+        <div id="${escapeHtml(config.cardsSectionId || "")}" class="mt-8 border-t border-slate-200/80 pt-8">
           <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             ${config.cards.map(renderShowcaseCard).join("")}
           </div>
@@ -198,6 +198,8 @@ if (servicePartials.length) {
   const configs = {
     home: {
       variant: "showcase",
+      sectionId: "ourservices",
+      cardsSectionId: "service-showcase-cards",
       eyebrowIcon: "fa-solid fa-layer-group",
       eyebrowText: "Our Services",
       title: "Our Commercial & Industrial Concrete Floor Services",
