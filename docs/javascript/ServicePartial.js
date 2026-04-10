@@ -10,20 +10,20 @@ if (servicePartials.length) {
       .replace(/'/g, "&#39;");
 
   const renderShowcaseCard = (card) => `
-    <article class="bg-white transition hover:-translate-y-1">
-      <div class="relative h-[20rem] w-full overflow-hidden rounded-[1.6rem]">
+    <article class="overflow-hidden rounded-[1.8rem] bg-white border border-slate-200/80 transition hover:-translate-y-1">
+      <div class="relative h-[17.5rem] w-full overflow-hidden sm:h-[19rem]">
         <img src="${escapeHtml(card.image)}"
           width="1170" height="780" alt="${escapeHtml(card.alt)}"
           class="absolute inset-0 h-full w-full object-cover" />
-        <div class="absolute inset-x-3 bottom-3 rounded-[1.35rem] border border-white/60 bg-white/78 p-4 shadow-lg shadow-slate-900/10 backdrop-blur-md sm:inset-x-4 sm:bottom-4">
-          <div class="flex items-start gap-3">
-            <span class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80]">
-              <i class="${escapeHtml(card.icon)}"></i>
-            </span>
-            <div>
-              <p class="text-lg font-semibold leading-tight text-slate-900">${escapeHtml(card.title)}</p>
-              <p class="mt-1 text-sm leading-relaxed text-slate-600">${escapeHtml(card.text)}</p>
-            </div>
+      </div>
+      <div class="border-t border-slate-200/70 bg-white px-4 py-4 sm:px-5 sm:py-5">
+        <div class="flex items-start gap-3">
+          <span class="mt-0.5 grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80] sm:h-11 sm:w-11">
+            <i class="${escapeHtml(card.icon)}"></i>
+          </span>
+          <div>
+            <p class="text-[1.08rem] font-semibold leading-tight text-slate-900 sm:text-[1.18rem]">${escapeHtml(card.title)}</p>
+            <p class="mt-1 text-sm leading-relaxed text-slate-600 sm:text-[0.96rem]">${escapeHtml(card.text)}</p>
           </div>
         </div>
       </div>
