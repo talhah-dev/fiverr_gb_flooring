@@ -351,15 +351,20 @@ if (servicePartials.length) {
       ]
     },
     vna: {
-      variant: "feature",
-      alignClass: "lg:items-start",
-      questionIcon: "fa-solid fa-circle-question",
-      title: "Does your business need VNA flooring services?",
+      variant: "showcase",
+      eyebrowIcon: "fa-solid fa-ruler-combined",
+      eyebrowText: "Super-flat VNA Flooring",
+      title: "VNA Warehouse Flooring Services",
       intro: "Very Narrow Aisle environments demand precise flatness and smooth travel routes. Floor defects can increase vibration, slow operations and accelerate wear on equipment.",
-      callout: {
+      calloutOne: {
+        icon: "fa-solid fa-circle-question",
+        title: "Precision-led VNA support",
+        text: "We help VNA warehouse operators improve floor accuracy, ride quality and long-term aisle performance."
+      },
+      calloutTwo: {
         icon: "fa-solid fa-life-ring",
-        title: "GB Flooring Group are here to help!",
-        text: "Since 2013 we have worked with businesses across many sectors including logistics, manufacturing, food & drink and pharmaceuticals. We provide a complete range of concrete floor services, with precision preparation, leveling and durable surfacing systems tailored for VNA warehouse operations across England & Wales."
+        title: "GB Flooring Group are here to help",
+        text: "Since 2013 we have worked with businesses across logistics, manufacturing, food & drink and pharmaceuticals."
       },
       cta: {
         href: "/#contact",
@@ -373,14 +378,14 @@ if (servicePartials.length) {
         badgeText: "Since 2013",
         kicker: "GB FLOORING GROUP",
         title: "Super-flat VNA Flooring",
-        text: "Precision leveling and durable finishes designed for VNA truck routes and narrow aisle operations."
+        text: "Precision levelling, repair and durable finishes designed for VNA truck routes and narrow aisle warehouse operations."
       },
       cards: [
-        { icon: "fa-solid fa-ruler-combined", title: "Precision leveling", text: "Precision leveling and profiling for VNA travel routes" },
-        { icon: "fa-solid fa-triangle-exclamation", title: "Crack & joint repairs", text: "Crack, joint and pothole repairs in warehouse aisles" },
-        { icon: "fa-solid fa-grip-lines", title: "Grinding & preparation", text: "Surface grinding and preparation to tight tolerances" },
-        { icon: "fa-solid fa-fill-drip", title: "Screeds & coatings", text: "Application of specialist screeds and resin coatings" },
-        { icon: "fa-solid fa-road", title: "Line marking & demarcation", text: "Line marking, demarcation and durable aisle finishes for VNA operations", fullWidth: true }
+        { image: "/docs/assets/img6.jpg", alt: "Precision levelling for VNA warehouse floors", icon: "fa-solid fa-ruler-combined", title: "Precision levelling", text: "Precision levelling and profiling for VNA travel routes" },
+        { image: "/docs/assets/img7.jpg", alt: "Crack and joint repairs for VNA aisles", icon: "fa-solid fa-triangle-exclamation", title: "Crack & joint repairs", text: "Crack, joint and pothole repairs in VNA warehouse aisles" },
+        { image: "/docs/assets/img8.jpg", alt: "Grinding and preparation for VNA floors", icon: "fa-solid fa-grip-lines", title: "Grinding & preparation", text: "Surface grinding and preparation to tight tolerances" },
+        { image: "/docs/assets/img9.jpg", alt: "Specialist screeds and coatings for VNA floors", icon: "fa-solid fa-fill-drip", title: "Screeds & coatings", text: "Application of specialist screeds and resin coatings" },
+        { image: "/docs/assets/img10.jpg", alt: "Line marking and demarcation for VNA operations", icon: "fa-solid fa-road", title: "Line marking & demarcation", text: "Line marking, demarcation and durable aisle finishes for VNA operations" }
       ]
     },
     "warehouse-guide": {

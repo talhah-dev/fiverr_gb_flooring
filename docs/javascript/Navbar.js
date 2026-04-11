@@ -29,12 +29,14 @@ navbar.innerHTML = `
                     Warehouse Flooring
                   </a>
 
+                  <!--
                   <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring/near-me/">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
                       <i class="fa-solid fa-map-location-dot"></i>
                     </span>
                     Warehouse Flooring Near Me
                   </a>
+                  -->
 
                   <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring/super-flat-vna-flooring/">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
@@ -200,12 +202,14 @@ navbar.innerHTML = `
             </a>
           </li>
 
+          <!--
           <li>
             <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/near-me/">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-map-location-dot"></i></span>
               Warehouse Flooring Near Me
             </a>
           </li>
+          -->
 
           <li>
             <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/super-flat-vna-flooring/">
