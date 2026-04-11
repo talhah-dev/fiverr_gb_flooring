@@ -1,24 +1,36 @@
 const contact = document.getElementById("contact");
 
 if (contact) {
+  const escapeHtml = (value) =>
+    String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
   const getConfigValue = (key, fallback) => {
     const value = contact.dataset[key];
     return value && value.trim() ? value.trim() : fallback;
   };
 
   const contactConfig = {
+    eyebrowIcon: getConfigValue("contactEyebrowIcon", "fa-solid fa-envelope"),
     eyebrow: getConfigValue("contactEyebrow", "Contact"),
     heading: getConfigValue("contactHeading", "Contact Us Now"),
     intro: getConfigValue(
       "contactIntro",
       "Use one of the following contact methods to arrange a free consultation & quotation."
     ),
+    regionIcon: getConfigValue("contactRegionIcon", "fa-solid fa-map-location-dot"),
     regionTitle: getConfigValue("contactRegionTitle", "Nationwide service"),
     regionText: getConfigValue(
       "contactRegionText",
       "We work across all regions of England & Wales."
     ),
+    imageBadgeIcon: getConfigValue("contactImageBadgeIcon", "fa-solid fa-map-location-dot"),
     imageBadge: getConfigValue("contactImageBadge", "England & Wales"),
+    imageKicker: getConfigValue("contactImageKicker", "GB FLOORING GROUP"),
     imageTitle: getConfigValue(
       "contactImageTitle",
       "Concrete floor installation, repairs & coatings"
@@ -35,6 +47,7 @@ if (contact) {
       "contactImageAlt",
       "Industrial concrete flooring inside a warehouse"
     ),
+    formIcon: getConfigValue("contactFormIcon", "fa-solid fa-comment-dots"),
     formTitle: getConfigValue("contactFormTitle", "Complete Our Contact Form"),
     formText: getConfigValue(
       "contactFormText",
@@ -55,16 +68,16 @@ if (contact) {
                     <div>
                         <div
                             class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[#2c4a80] shadow-sm">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span class="text-sm font-semibold tracking-wide">${contactConfig.eyebrow}</span>
+                            <i class="${escapeHtml(contactConfig.eyebrowIcon)}"></i>
+                            <span class="text-sm font-semibold tracking-wide">${escapeHtml(contactConfig.eyebrow)}</span>
                         </div>
                         <h2
                             class="mt-4 text-3xl font-semibold leading-tight text-slate-900 sm:text-4xl">
-                            ${contactConfig.heading}
+                            ${escapeHtml(contactConfig.heading)}
                         </h2>
                         <p
                             class="mt-3 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                            ${contactConfig.intro}
+                            ${escapeHtml(contactConfig.intro)}
                         </p>
                     </div>
                 </div>
@@ -108,12 +121,12 @@ if (contact) {
                                 <div class="flex items-start gap-3">
                                     <span
                                         class="mt-0.5 shrink-0 grid h-10 w-10 place-items-center rounded-xl bg-white text-[#2c4a80] shadow-sm">
-                                        <i class="fa-solid fa-map-location-dot"></i>
+                                        <i class="${escapeHtml(contactConfig.regionIcon)}"></i>
                                     </span>
                                     <div>
-                                        <p class="font-semibold text-slate-900">${contactConfig.regionTitle}</p>
+                                        <p class="font-semibold text-slate-900">${escapeHtml(contactConfig.regionTitle)}</p>
                                         <p class="mt-1 text-sm leading-relaxed text-slate-600">
-                                            ${contactConfig.regionText}
+                                            ${escapeHtml(contactConfig.regionText)}
                                         </p>
                                     </div>
                                 </div>
@@ -121,26 +134,26 @@ if (contact) {
 
                             <div class="mt-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
                                 <div class="relative h-[17rem] w-full sm:h-[19rem]">
-                                    <img src="${contactConfig.imageSrc}"
+                                    <img src="${escapeHtml(contactConfig.imageSrc)}"
                                         width="1172" height="781"
-                                        alt="${contactConfig.imageAlt}"
+                                        alt="${escapeHtml(contactConfig.imageAlt)}"
                                         class="absolute inset-0 h-full w-full object-cover" />
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-slate-950/10 to-transparent"></div>
 
                                     <div
                                         class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-white backdrop-blur">
-                                        <i class="fa-solid fa-map-location-dot text-xs"></i>
-                                        <span class="text-xs font-semibold">${contactConfig.imageBadge}</span>
+                                        <i class="${escapeHtml(contactConfig.imageBadgeIcon)} text-xs"></i>
+                                        <span class="text-xs font-semibold">${escapeHtml(contactConfig.imageBadge)}</span>
                                     </div>
                                 </div>
 
                                 <div class="border-t border-slate-200 bg-white px-5 py-5 sm:px-6">
-                                    <p class="text-[11px] font-semibold tracking-[0.3em] text-slate-500">GB FLOORING GROUP</p>
+                                    <p class="text-[11px] font-semibold tracking-[0.3em] text-slate-500">${escapeHtml(contactConfig.imageKicker)}</p>
                                     <p class="mt-2 text-xl font-semibold leading-tight text-slate-900">
-                                        ${contactConfig.imageTitle}
+                                        ${escapeHtml(contactConfig.imageTitle)}
                                     </p>
                                     <p class="mt-2 text-sm leading-relaxed text-slate-600">
-                                        ${contactConfig.imageText}
+                                        ${escapeHtml(contactConfig.imageText)}
                                     </p>
                                 </div>
                             </div>
@@ -154,11 +167,11 @@ if (contact) {
                                 <div class="flex md:items-center gap-3">
                                     <span
                                         class="grid h-11 shrink-0 w-11 place-items-center rounded-xl bg-[#2c4a80]/10 text-[#2c4a80]">
-                                        <i class="fa-solid fa-comment-dots"></i>
+                                        <i class="${escapeHtml(contactConfig.formIcon)}"></i>
                                     </span>
                                     <div>
-                                        <p class="text-lg font-semibold text-slate-900">${contactConfig.formTitle}</p>
-                                        <p class="text-sm text-slate-600">${contactConfig.formText}</p>
+                                        <p class="text-lg font-semibold text-slate-900">${escapeHtml(contactConfig.formTitle)}</p>
+                                        <p class="text-sm text-slate-600">${escapeHtml(contactConfig.formText)}</p>
                                     </div>
                                 </div>
 

@@ -1,5 +1,7 @@
-const operate = document.getElementById("operate");
-operate.innerHTML = `
+const operate = document.getElementById("ataglance") || document.getElementById("operate");
+
+if (operate) {
+  operate.innerHTML = `
         <section class="relative overflow-hidden bg-slate-950 py-16 sm:py-20">
             <div class="absolute inset-0 opacity-40">
                 <div class="absolute -top-24 left-10 h-72 w-72 rounded-full bg-[#2c4a80]/45 blur-3xl"></div>
@@ -160,4 +162,5 @@ operate.innerHTML = `
                 </div>
             </div>
         </section>
-`
+`;
+}
