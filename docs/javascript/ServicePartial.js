@@ -15,6 +15,16 @@ if (servicePartials.length) {
         <img src="${escapeHtml(card.image)}"
           width="1170" height="780" alt="${escapeHtml(card.alt)}"
           class="absolute inset-0 h-full w-full object-cover" />
+        ${card.detailKey ? `
+          <button
+            type="button"
+            class="serviceDetailTrigger absolute left-4 top-4 inline-flex items-center justify-center rounded-lg border border-slate-400 bg-white/95 px-5 py-1.5 text-xs font-semibold uppercase tracking-wide text-slate-700 shadow-sm transition hover:bg-white"
+            data-detail-key="${escapeHtml(card.detailKey)}"
+            aria-label="Show more about ${escapeHtml(card.title)}"
+          >
+            More..
+          </button>
+        ` : ""}
       </div>
       <div class="border-t border-slate-200/70 bg-white px-4 py-4 sm:px-5 sm:py-5">
         <div class="flex items-start gap-3">
@@ -29,6 +39,57 @@ if (servicePartials.length) {
       </div>
     </article>
   `;
+
+  const renderServiceDetailPanel = (config) => {
+    if (!config.serviceDetails) return "";
+
+    return `
+      <div
+        class="serviceDetailPopup pointer-events-none fixed left-0 top-0 z-[90] hidden max-w-[min(92vw,620px)] rounded-[1.8rem] bg-[#575757] p-6 text-white opacity-0 shadow-2xl transition-all duration-300"
+        data-service-detail-panel
+        data-default-detail="${escapeHtml(config.defaultDetailKey || "")}"
+        aria-hidden="true"
+      >
+        <div class="max-h-[min(78vh,760px)] overflow-y-auto pr-2">
+          ${Object.entries(config.serviceDetails).map(([key, detail]) => `
+            <article class="serviceDetailItem ${key === config.defaultDetailKey ? "" : "hidden"}" data-service-detail="${escapeHtml(key)}">
+              <h3 class="text-[2rem] font-semibold leading-tight">${escapeHtml(detail.title)}</h3>
+              <p class="mt-6 text-base leading-relaxed text-white/90">${escapeHtml(detail.intro)}</p>
+
+              <ul class="mt-6 space-y-2 text-base leading-relaxed text-white/90">
+                ${detail.risks.map((item) => `<li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white"></span><span>${escapeHtml(item)}</span></li>`).join("")}
+              </ul>
+
+              <p class="mt-8 text-[1.4rem] font-medium leading-tight text-white/95">${escapeHtml(detail.businessTitle)}</p>
+              <ul class="mt-5 space-y-2 text-base leading-relaxed text-white/90">
+                ${detail.businessRisks.map((item) => `<li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white"></span><span>${escapeHtml(item)}</span></li>`).join("")}
+              </ul>
+
+              <p class="mt-8 text-[1.4rem] font-medium leading-tight text-white/95">${escapeHtml(detail.servicesTitle)}</p>
+              <div class="mt-6 space-y-6">
+                ${detail.serviceGroups.map((group) => `
+                  <div>
+                    <p class="text-[1.35rem] font-semibold leading-tight text-white">${escapeHtml(group.title)}</p>
+                    <ul class="mt-3 space-y-2 text-lg leading-relaxed text-white">
+                      ${group.items.map((item) => `<li class="flex gap-3"><span class="shrink-0 text-white">✔</span><span>${escapeHtml(item)}</span></li>`).join("")}
+                    </ul>
+                  </div>
+                `).join("")}
+              </div>
+
+              <div class="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-lg font-medium text-white">
+                ${detail.features.map((item) => `<span class="inline-flex items-center gap-2"><span>☑</span><span>${escapeHtml(item)}</span></span>`).join("")}
+              </div>
+
+              <a href="${escapeHtml(detail.ctaHref)}" class="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#2c4a80] px-5 py-3 text-lg font-semibold text-white transition hover:brightness-95">
+                ${escapeHtml(detail.ctaLabel)}
+              </a>
+            </article>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  };
 
   const renderFeatureCard = (card) => `
     <div class="${card.fullWidth ? "h-full sm:col-span-2" : "h-full"} rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
@@ -45,7 +106,7 @@ if (servicePartials.length) {
   `;
 
   const renderShowcase = (config) => `
-    <section ${config.sectionId ? `id="${escapeHtml(config.sectionId)}"` : ""} class="relative overflow-hidden bg-white pb-16 pt-8 sm:pb-20 sm:pt-12">
+    <section ${config.sectionId ? `id="${escapeHtml(config.sectionId)}"` : ""} class="relative overflow-hidden bg-white pb-2 pt-2 sm:pb-4 sm:pt-4">
       <div class="absolute inset-0 -z-10">
         <div class="absolute -top-24 left-10 h-72 w-72 rounded-full bg-[#2c4a80]/10 blur-3xl"></div>
         <div class="absolute -bottom-24 right-10 h-72 w-72 rounded-full bg-[#2c4a80]/6 blur-3xl"></div>
@@ -99,8 +160,7 @@ if (servicePartials.length) {
             <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl">
               <div class="relative h-[16rem] w-full sm:h-[19rem] md:h-[24rem]">
                 <img src="${escapeHtml(config.hero.image)}" width="1170" height="780" alt="${escapeHtml(config.hero.alt)}" class="absolute inset-0 h-full w-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/78 via-slate-900/46 to-slate-900/10"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/18"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/10 to-transparent"></div>
 
                 <div class="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/12 px-3 py-2 text-white shadow-lg shadow-black/10 backdrop-blur-sm">
                   <i class="${escapeHtml(config.hero.badgeIcon)}"></i>
@@ -118,8 +178,11 @@ if (servicePartials.length) {
         </div>
 
         <div id="${escapeHtml(config.cardsSectionId || "")}" class="mt-8 border-t border-slate-200/80 pt-8">
-          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            ${config.cards.map(renderShowcaseCard).join("")}
+          <div class="relative">
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              ${config.cards.map(renderShowcaseCard).join("")}
+            </div>
+            ${renderServiceDetailPanel(config)}
           </div>
         </div>
       </div>
@@ -202,17 +265,17 @@ if (servicePartials.length) {
       cardsSectionId: "service-showcase-cards",
       eyebrowIcon: "fa-solid fa-layer-group",
       eyebrowText: "Our Services",
-      title: "Our Commercial & Industrial Concrete Floor Services",
-      intro: "Concrete floor defects can be structurally unsafe, deteriorate rapidly and start to affect day-to-day operations.",
+      title: "Our Comprehensive Flooring Services",
+      intro: "We provide a comprehensive range of concrete flooring repair & renovation solutions to bring your site up to standard",
       calloutOne: {
         icon: "fa-solid fa-circle-question",
-        title: "Need repair and/or renovation?",
-        text: "We help commercial and industrial sites restore safety, durability and appearance."
+        title: "Need flooring repair or renovation?",
+        text: "Concrete floor defects can be unsafe, deteriorate rapidly & risk affecting day-to-day business operations. "
       },
       calloutTwo: {
-        icon: "fa-solid fa-life-ring",
+        icon: "fa-solid fa-handshake",
         title: "GB Flooring Group are here to help",
-        text: sharedHelpText
+        text: "We help commercial and industrial sites improve floor safety and appearance."
       },
       cta: {
         href: "/#contact",
@@ -220,21 +283,255 @@ if (servicePartials.length) {
         icon: "fa-solid fa-paper-plane"
       },
       hero: {
-        image: "https://images.unsplash.com/photo-1771531072574-af6ed6b954c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "/docs/assets/images/services/greyfloor-1920-1080.webp",
         alt: "Industrial warehouse floor aisle with markings",
-        badgeIcon: "fa-solid fa-sparkles",
-        badgeText: "Professional finish",
+        badgeIcon: "fa-solid fa-layer-group",
+        badgeText: "Professional repairs & finishes",
         kicker: "GB FLOORING GROUP",
-        title: "Concrete Floor Installation, Surfacing & Repair",
-        text: "Repairs to defects in the concrete slab and surface renovation using specialist resin coatings, screeds and paints."
+        title: "Our Floor Repair & Renovation Services",
+        text: "Our industrial & commercial concrete floor services include: Repairs to defects in concrete slabs (hole, crack & expansion joints etc.), Floor grinding/ cleaning/levelling & Renovation of floor surfaces via resin coatings, screeds & paints - for businesses across the UK"
       },
       cards: [
-        { image: "/docs/assets/img6.jpg", alt: "Floor joint repair services", icon: "fa-solid fa-arrows-left-right-to-line", title: "Floor joint repairs", text: "Filling and stabilisation of damaged concrete floor joints" },
-        { image: "/docs/assets/img7.jpg", alt: "Crack and pothole repair services", icon: "fa-solid fa-triangle-exclamation", title: "Crack & pothole repairs", text: "Concrete flooring crack and pothole repairs" },
-        { image: "/docs/assets/img8.jpg", alt: "Grinding and cleaning services", icon: "fa-solid fa-grip-lines", title: "Grinding & cleaning", text: "Concrete surface grinding and cleaning" },
-        { image: "/docs/assets/img9.jpg", alt: "Screeds and resin coatings services", icon: "fa-solid fa-fill-drip", title: "Screeds & resin coatings", text: "Application of liquid screeds and epoxy resin floor coatings" },
-        { image: "/docs/assets/img10.jpg", alt: "Floor painting and marking services", icon: "fa-solid fa-paint-roller", title: "Floor painting & markings", text: "Painting of factory and warehouse floors including markings and walkways" }
-      ]
+        { image: "/docs/assets/images/services/joint-arris-damage-600-450.webp", alt: "Floor joint repair services", icon: "fa-solid fa-arrows-left-right-to-line", title: "Floor joint repairs", text: "Filling and stabilisation of damaged expansion & arris floor joints", detailKey: "floor-joint-repairs" },
+        { image: "/docs/assets/images/services/surface-damage-600-450.webp", alt: "Floor surface repair services", icon: "fa-solid fa-triangle-exclamation", title: "Floor surface repairs", text: "Concrete Crack and pothole repairs. bolts", detailKey: "floor-surface-repairs" },
+        { image: "/docs/assets/images/services/surface-grinding-600-450.webp", alt: "Grinding and cleaning services", icon: "fa-solid fa-gear", title: "Grinding & cleaning", text: "Dust-free removal of existing coatings, cleaing of oil & deposits, levelling", detailKey: "grinding-cleaning" },
+        { image: "/docs/assets/images/services/floor-resins-600-450.webp", alt: "Screeds and resin coatings services", icon: "fa-solid fa-fill-drip", title: "Screeds & resin coatings", text: "Application of liquid screeds and epoxy resin floor coatings", detailKey: "screeds-resin-coatings" },
+        { image: "/docs/assets/images/services/floor-marking-600-450.webp", alt: "Floor painting and marking services", icon: "fa-solid fa-paint-roller", title: "Floor painting & markings", text: "Painting of factory and warehouse floors including markings and walkways", detailKey: "floor-painting-markings" },
+        { image: "/docs/assets/images/services/vna-flooring-600-450.webp", alt: "VNA superflat flooring", icon: "fa-solid fa-minus", title: "VNA superflat flooring", text: "Very Narrow Aisle warehouse ultra-precision superflat flooring", detailKey: "vna-superflat-flooring" }
+      ],
+      defaultDetailKey: "floor-joint-repairs",
+      serviceDetails: {
+        "floor-joint-repairs": {
+          title: "FLOOR JOINT REPAIR SERVICES (EXAMPLE)",
+          intro: "Expansion joints are gaps within a floor slab that allow vibration and temperature changes, helping to minimise cracking. Joint arrises are the edges of the gaps in a joint. The risks to joints include the following:",
+          risks: [
+            "Expansion joints fail as they crack, block or lose flexibility, causing stress in the slab",
+            "Joint arrises break down from impact and traffic, leading to spalling and widening damage",
+            "Failure restricts movement and accelerates cracking and floor deterioration"
+          ],
+          businessTitle: "THE RISKS TO YOUR BUSINESS",
+          businessRisks: [
+            "Increased forklift damage and downtime from impact and vibration",
+            "Safety hazards from trip points and uneven surfaces",
+            "Accelerated slab deterioration and widening structural defects",
+            "Reduced operational efficiency and slower material handling",
+            "Higher long-term repair costs due to progressive floor failure"
+          ],
+          servicesTitle: "OUR SERVICES",
+          serviceGroups: [
+            {
+              title: "Expansion Joint Repairs",
+              items: [
+                "Cut either side of the joint",
+                "Infill with sealant"
+              ]
+            },
+            {
+              title: "Arris Major Repairs",
+              items: [
+                "Cut either side of the joint",
+                "Break out the failed section",
+                "Infill with sealant",
+                "Reseal the joint and diamond-grind upon curing for a seamless transition"
+              ]
+            }
+          ],
+          features: ["FEATURE 1", "FEATURE 2", "FEATURE 3"],
+          ctaHref: "/#contact",
+          ctaLabel: "GET A FREE QUOTE"
+        },
+        "floor-surface-repairs": {
+          title: "FLOOR SURFACE REPAIR SERVICES",
+          intro: "Surface damage such as cracks, potholes and localised slab defects can quickly worsen under repeated traffic and impact. These defects affect the condition, safety and appearance of the floor surface.",
+          risks: [
+            "Cracks and potholes allow defects to spread under repeated loading",
+            "Damaged surfaces create unstable running conditions for forklifts and pallet traffic",
+            "Unrepaired defects trap dust, debris and water, increasing deterioration"
+          ],
+          businessTitle: "THE RISKS TO YOUR BUSINESS",
+          businessRisks: [
+            "Safety issues for staff, visitors and mobile equipment",
+            "More downtime caused by reactive maintenance and patching",
+            "Poor site presentation in customer-facing or audited environments",
+            "Faster deterioration across surrounding slab areas",
+            "Higher long-term repair costs if defects are left to expand"
+          ],
+          servicesTitle: "OUR SERVICES",
+          serviceGroups: [
+            {
+              title: "Crack Repairs",
+              items: [
+                "Open and prepare the damaged crack",
+                "Stabilise and infill with suitable repair materials"
+              ]
+            },
+            {
+              title: "Pothole & Surface Defect Repairs",
+              items: [
+                "Cut out the failed section",
+                "Break out loose or damaged concrete",
+                "Rebuild with durable repair mortar",
+                "Grind smooth for a safer transition"
+              ]
+            }
+          ],
+          features: ["Fast turnaround", "Safer surfaces", "Durable finish"],
+          ctaHref: "/#contact",
+          ctaLabel: "GET A FREE QUOTE"
+        },
+        "grinding-cleaning": {
+          title: "GRINDING & CLEANING SERVICES",
+          intro: "Concrete floor surfaces often need preparation before coatings, repairs or repainting. Grinding and cleaning help remove contamination, unevenness and worn finishes so the slab can be restored properly.",
+          risks: [
+            "Old coatings and contamination prevent new finishes from bonding correctly",
+            "Uneven surfaces and debris build-up affect cleanliness and usability",
+            "Poor preparation can reduce the lifespan of follow-on repair and coating systems"
+          ],
+          businessTitle: "THE RISKS TO YOUR BUSINESS",
+          businessRisks: [
+            "Reduced performance of coatings and repair materials",
+            "Dust, residue and contamination affecting operations",
+            "Extra downtime if surfaces need to be re-prepared later",
+            "Poor finish quality in visible working areas",
+            "Higher installation costs from avoidable remedial work"
+          ],
+          servicesTitle: "OUR SERVICES",
+          serviceGroups: [
+            {
+              title: "Surface Grinding",
+              items: [
+                "Mechanically grind concrete surfaces",
+                "Remove uneven areas, residues and failed finishes"
+              ]
+            },
+            {
+              title: "Deep Cleaning & Preparation",
+              items: [
+                "Clean oil, dust and embedded surface contamination",
+                "Prepare the slab for repairs, coatings or repainting",
+                "Create a cleaner and more even working surface"
+              ]
+            }
+          ],
+          features: ["Dust-controlled methods", "Improved adhesion", "Cleaner finish"],
+          ctaHref: "/#contact",
+          ctaLabel: "GET A FREE QUOTE"
+        },
+        "screeds-resin-coatings": {
+          title: "SCREEDS & RESIN COATING SERVICES",
+          intro: "Where floors are worn, uneven or visually tired, screeds and resin coatings can restore performance and presentation. These systems help create a more durable and easier-to-maintain surface.",
+          risks: [
+            "Worn concrete surfaces continue to erode under heavy use",
+            "Uneven floors can affect operations and product handling",
+            "Unprotected slabs are more vulnerable to staining, dusting and surface wear"
+          ],
+          businessTitle: "THE RISKS TO YOUR BUSINESS",
+          businessRisks: [
+            "Shortened floor lifespan in busy operational areas",
+            "Reduced cleanliness and presentation standards",
+            "Disruption from repeated patch repairs instead of full surface renewal",
+            "Lower resistance to chemicals, impact and daily abrasion",
+            "Increased maintenance spend over time"
+          ],
+          servicesTitle: "OUR SERVICES",
+          serviceGroups: [
+            {
+              title: "Liquid Screeds",
+              items: [
+                "Apply screed systems to improve levels and finish",
+                "Create a renewed wearing surface over prepared slabs"
+              ]
+            },
+            {
+              title: "Epoxy & Resin Coatings",
+              items: [
+                "Apply protective coating systems",
+                "Improve durability, appearance and cleanability",
+                "Install finishes suited to operational demands"
+              ]
+            }
+          ],
+          features: ["Renewed surface", "Protective finish", "Easy to maintain"],
+          ctaHref: "/#contact",
+          ctaLabel: "GET A FREE QUOTE"
+        },
+        "floor-painting-markings": {
+          title: "FLOOR PAINTING & MARKING SERVICES",
+          intro: "Floor painting and line marking help organise space, improve visual control and support safer movement through warehouses, factories and commercial sites. Clear markings are essential in busy working environments.",
+          risks: [
+            "Worn or unclear markings reduce visibility for traffic and pedestrians",
+            "Poorly defined zones can create confusion and operational inefficiency",
+            "Untidy surfaces weaken presentation and safety management standards"
+          ],
+          businessTitle: "THE RISKS TO YOUR BUSINESS",
+          businessRisks: [
+            "Higher risk of accidents in mixed traffic areas",
+            "Reduced efficiency from unclear walkways and storage zones",
+            "Poor visual standards in active workspaces",
+            "More difficulty maintaining organised site layouts",
+            "Repeated repainting if unsuitable materials are used"
+          ],
+          servicesTitle: "OUR SERVICES",
+          serviceGroups: [
+            {
+              title: "Floor Painting",
+              items: [
+                "Prepare and paint concrete floor surfaces",
+                "Refresh worn operational and commercial areas"
+              ]
+            },
+            {
+              title: "Line & Zone Markings",
+              items: [
+                "Mark pedestrian walkways and forklift routes",
+                "Define bays, work zones and storage areas",
+                "Apply durable markings suited to site use"
+              ]
+            }
+          ],
+          features: ["Clear zoning", "Safer movement", "Professional finish"],
+          ctaHref: "/#contact",
+          ctaLabel: "GET A FREE QUOTE"
+        },
+        "vna-superflat-flooring": {
+          title: "VNA SUPERFLAT FLOORING SERVICES",
+          intro: "Very Narrow Aisle warehouse operations depend on highly accurate floor tolerances. Superflat flooring reduces vibration, improves truck travel and supports reliable performance in narrow aisle environments.",
+          risks: [
+            "Poor floor flatness increases vibration and equipment wear",
+            "Uneven aisle profiles can affect travel speed and picking accuracy",
+            "Tolerance failures can reduce the efficiency of VNA operations"
+          ],
+          businessTitle: "THE RISKS TO YOUR BUSINESS",
+          businessRisks: [
+            "Reduced productivity in high-density warehouse aisles",
+            "Increased wear on specialist VNA trucks and components",
+            "More maintenance and interruption to operations",
+            "Lower safety and ride quality for operators",
+            "Costly correction works if tolerances are not properly managed"
+          ],
+          servicesTitle: "OUR SERVICES",
+          serviceGroups: [
+            {
+              title: "Superflat Floor Correction",
+              items: [
+                "Assess aisle flatness and identify problem areas",
+                "Grind and correct localised deviations"
+              ]
+            },
+            {
+              title: "VNA Surface Upgrades",
+              items: [
+                "Prepare and refine travel routes",
+                "Improve ride performance and aisle consistency",
+                "Support long-term VNA operational reliability"
+              ]
+            }
+          ],
+          features: ["Tighter tolerances", "Smoother travel", "Better aisle performance"],
+          ctaHref: "/#contact",
+          ctaLabel: "GET A FREE QUOTE"
+        }
+      }
     },
     warehouse: {
       variant: "showcase",
@@ -495,5 +792,121 @@ if (servicePartials.length) {
     if (!config) return;
 
     root.innerHTML = config.variant === "feature" ? renderFeature(config) : renderShowcase(config);
+
+    const detailPanel = root.querySelector("[data-service-detail-panel]");
+    const detailTriggers = Array.from(root.querySelectorAll(".serviceDetailTrigger"));
+
+    if (detailPanel && detailTriggers.length) {
+      const detailItems = Array.from(detailPanel.querySelectorAll("[data-service-detail]"));
+      let activeDetailKey = "";
+      let activeTrigger = null;
+      let hideTimer = null;
+
+      const showDetail = (detailKey) => {
+        detailItems.forEach((item) => {
+          item.classList.toggle("hidden", item.dataset.serviceDetail !== detailKey);
+        });
+        activeDetailKey = detailKey;
+      };
+
+      const positionPopup = (trigger) => {
+        if (!trigger || detailPanel.classList.contains("hidden")) return;
+
+        const rect = trigger.getBoundingClientRect();
+        const popupRect = detailPanel.getBoundingClientRect();
+        const gap = 12;
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        let left = rect.left;
+        let top = rect.bottom + gap;
+
+        if (left + popupRect.width > viewportWidth - 16) {
+          left = viewportWidth - popupRect.width - 16;
+        }
+        if (left < 16) {
+          left = 16;
+        }
+
+        if (top + popupRect.height > viewportHeight - 16) {
+          top = rect.top - popupRect.height - gap;
+        }
+        if (top < 16) {
+          top = 16;
+        }
+
+        detailPanel.style.left = `${left}px`;
+        detailPanel.style.top = `${top}px`;
+      };
+
+      const openPopup = (trigger, detailKey) => {
+        if (!detailKey) return;
+        if (hideTimer) {
+          clearTimeout(hideTimer);
+          hideTimer = null;
+        }
+
+        showDetail(detailKey);
+        activeTrigger = trigger;
+        detailPanel.classList.remove("hidden", "pointer-events-none", "opacity-0");
+        detailPanel.classList.add("pointer-events-auto", "opacity-100");
+        detailPanel.setAttribute("aria-hidden", "false");
+        requestAnimationFrame(() => positionPopup(trigger));
+      };
+
+      const closePopup = () => {
+        detailPanel.classList.add("pointer-events-none", "opacity-0");
+        detailPanel.classList.remove("pointer-events-auto", "opacity-100");
+        detailPanel.setAttribute("aria-hidden", "true");
+        hideTimer = window.setTimeout(() => {
+          detailPanel.classList.add("hidden");
+        }, 220);
+      };
+
+      const scheduleClose = () => {
+        if (hideTimer) clearTimeout(hideTimer);
+        hideTimer = window.setTimeout(() => {
+          closePopup();
+        }, 120);
+      };
+
+      const defaultDetailKey = detailPanel.dataset.defaultDetail || detailTriggers[0]?.dataset.detailKey;
+      if (defaultDetailKey) showDetail(defaultDetailKey);
+
+      detailTriggers.forEach((trigger) => {
+        const activateDetail = () => {
+          const { detailKey } = trigger.dataset;
+          if (!detailKey) return;
+          openPopup(trigger, detailKey);
+        };
+
+        trigger.addEventListener("mouseenter", activateDetail);
+        trigger.addEventListener("focus", activateDetail);
+        trigger.addEventListener("click", activateDetail);
+        trigger.addEventListener("mouseleave", scheduleClose);
+        trigger.addEventListener("blur", scheduleClose);
+      });
+
+      detailPanel.addEventListener("mouseenter", () => {
+        if (hideTimer) {
+          clearTimeout(hideTimer);
+          hideTimer = null;
+        }
+      });
+
+      detailPanel.addEventListener("mouseleave", scheduleClose);
+
+      window.addEventListener("scroll", () => {
+        if (activeTrigger && !detailPanel.classList.contains("hidden")) {
+          positionPopup(activeTrigger);
+        }
+      }, { passive: true });
+
+      window.addEventListener("resize", () => {
+        if (activeTrigger && !detailPanel.classList.contains("hidden")) {
+          positionPopup(activeTrigger);
+        }
+      });
+    }
   });
 }

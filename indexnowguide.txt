@@ -1,0 +1,14 @@
+You make manual requests in the browser to get Bing to update page crawls instantly by using the following sort of requests
+
+
+https://api.indexnow.org/indexnow?url=https://industrialfloorcontractors.co.uk/&key=indexnowca997e03b70542f7b0a1d5174e302844
+
+
+The below isnt required but can be an alternative way to do it
+
+https://www.bing.com/indexnow?url=https://industrialfloorcontractors.co.uk/&key=indexnowca997e03b70542f7b0a1d5174e302844&keyLocation=https://industrialfloorcontractors.co.uk/indexnowca997e03b70542f7b0a1d5174e302844.txt
+
+
+
+https://www.indexnow.org/faq
+https://www.bing.com/indexnow/getstarted

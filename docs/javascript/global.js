@@ -1,7 +1,3 @@
-const lenis = new Lenis({
-  autoRaf: true,
-});
-
 const bottomToTopScroll = document.getElementById("bottomToTopScroll");
 
 bottomToTopScroll.innerHTML = `
@@ -28,5 +24,5 @@ window.addEventListener("scroll", toggleToTop);
 toggleToTop();
 
 toTopBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0 });
 });

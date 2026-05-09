@@ -153,7 +153,7 @@ if (supportStagesRoots.length) {
   `;
 
   const renderSupportStages = (config) => `
-    <section class="relative overflow-hidden bg-white py-16 sm:py-20">
+    <section class="relative overflow-hidden bg-white py-8 sm:py-10">
       <div class="absolute inset-0 -z-10">
         <div class="absolute -top-24 right-10 h-72 w-72 rounded-full bg-[#2c4a80]/10 blur-3xl"></div>
         <div class="absolute -bottom-24 left-10 h-72 w-72 rounded-full bg-[#52b69a]/10 blur-3xl"></div>

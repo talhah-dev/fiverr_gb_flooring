@@ -4,14 +4,17 @@ navbar.innerHTML = `
   <header id="siteHeader" class="fixed inset-x-0 top-0 z-50">
     <div id="navContainer" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 transition-all duration-300">
       <div id="navBar" class="relative mt-3 flex items-center justify-between rounded-2xl px-3 py-2.5 transition-all duration-300">
-        <a href="/" class="inline-flex items-center gap-3 shrink-0">
+        <a href="/#hero" class="inline-flex items-center gap-3 shrink-0">
           <img src="/docs/assets/logo.png" height="323" class="h-12" alt="">
         </a>
 
         <nav class="hidden md:block">
           <ul class="flex items-center justify-center gap-4 lg:gap-6 text-sm font-semibold">
-            <li><a class="navLink transition" href="/">Home</a></li>
+            <li><a class="navLink transition" href="/#hero">Home</a></li>
+            <li><a class="navLink transition" href="/#aboutus">About</a></li>
+            <li><a class="navLink transition" href="/#ourservices">Our Services</a></li>
 
+            <!--
             <li class="relative group">
               <a class="navLink transition" href="/warehouse-flooring/" aria-haspopup="true">
                 <span class="inline-flex items-center gap-1">
@@ -28,15 +31,6 @@ navbar.innerHTML = `
                     </span>
                     Warehouse Flooring
                   </a>
-
-                  <!--
-                  <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring/near-me/">
-                    <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
-                      <i class="fa-solid fa-map-location-dot"></i>
-                    </span>
-                    Warehouse Flooring Near Me
-                  </a>
-                  -->
 
                   <a class="mt-1 flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition" href="/warehouse-flooring/super-flat-vna-flooring/">
                     <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]">
@@ -122,8 +116,7 @@ navbar.innerHTML = `
                 </div>
               </div>
             </li>
-
-            <li><a class="navLink transition" href="/#about">About</a></li>
+            -->
           </ul>
         </nav>
 
@@ -171,7 +164,7 @@ navbar.innerHTML = `
     aria-hidden="true"
   >
     <div class="flex items-center justify-between px-5 py-5">
-      <a href="/" class="inline-flex items-center gap-3 shrink-0">
+      <a href="/#hero" class="inline-flex items-center gap-3 shrink-0">
         <img src="/docs/assets/logo.png" height="323" class="h-12" alt="">
       </a>
 
@@ -189,27 +182,33 @@ navbar.innerHTML = `
       <nav class="mt-2">
         <ul class="space-y-2">
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/">
+            <a class="menuLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/#hero">
               <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-house"></i></span>
               Home
             </a>
           </li>
 
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/">
-              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-warehouse"></i></span>
-              Warehouse Flooring
+            <a class="menuLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/#aboutus">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-circle-info"></i></span>
+              About
+            </a>
+          </li>
+
+          <li>
+            <a class="menuLink flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/#ourservices">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-layer-group"></i></span>
+              Our Services
             </a>
           </li>
 
           <!--
           <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/near-me/">
-              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-map-location-dot"></i></span>
-              Warehouse Flooring Near Me
+            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/">
+              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-warehouse"></i></span>
+              Warehouse Flooring
             </a>
           </li>
-          -->
 
           <li>
             <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/warehouse-flooring/super-flat-vna-flooring/">
@@ -266,18 +265,12 @@ navbar.innerHTML = `
               Concrete Floor Repair Guide
             </a>
           </li>
-
-          <li>
-            <a class="flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 hover:bg-slate-50 transition" href="/#about">
-              <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#2c4a80]/10 text-[#2c4a80]"><i class="fa-solid fa-circle-info"></i></span>
-              About
-            </a>
-          </li>
+          -->
         </ul>
       </nav>
 
       <div class="mt-6 grid gap-2">
-        <a href="/#contact" class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#2c4a80] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2c4a80]/20 transition hover:brightness-95">
+        <a href="/#contact" class="menuLink inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#2c4a80] px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2c4a80]/20 transition hover:brightness-95">
           <i class="fa-solid fa-paper-plane"></i>
           Request a Quote
         </a>
@@ -339,6 +332,7 @@ const menuBtnEl = document.getElementById("menuBtn");
 const closeBtn = document.getElementById("closeBtn");
 const overlay = document.getElementById("menuOverlay");
 const panel = document.getElementById("menuPanel");
+const menuLinks = Array.from(document.querySelectorAll(".menuLink"));
 
 const lockScroll = () => {
   document.documentElement.style.overflow = "hidden";
@@ -406,6 +400,7 @@ const closeMenu = () => {
 if (menuBtnEl) menuBtnEl.addEventListener("click", openMenu);
 if (closeBtn) closeBtn.addEventListener("click", closeMenu);
 if (overlay) overlay.addEventListener("click", closeMenu);
+menuLinks.forEach((link) => link.addEventListener("click", closeMenu));
 window.addEventListener("keydown", (e) => e.key === "Escape" && closeMenu());
 
 const applyNavState = () => {

@@ -1,0 +1,24 @@
+---
+deployment:
+  tasks:
+
+  
+  
+    # Everything deployed by rsync will land here.
+    - export DEPLOYPATH=/home/mnpalcmq/public_html/
+
+    # Sync repository files to the live server
+    
+    # -r            = recursive copy (folders + files)
+    # --no-perms    = ignore local file permissions
+    # --no-owner    = ignore ownership (prevents cPanel conflicts)
+    # --no-group    = ignore group settings
+    # --delete      = removes files on server not in repo
+    # --exclude     = avoids sending Git metadata
+    - /usr/bin/rsync -r --no-perms --no-owner --no-group --delete --exclude='.git/' ./ $DEPLOYPATH
+
+    # Normalise directory permissions to ensures Apache can always enter directories
+    - find $DEPLOYPATH -type d -exec chmod 755 {} \;
+
+    # Normalise file permissions to ensure files are readable by the web server
+    - find $DEPLOYPATH -type f -exec chmod 644 {} \;

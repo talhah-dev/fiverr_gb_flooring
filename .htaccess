@@ -1,0 +1,191 @@
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit
+
+# --------------------------------------------------
+# Basic security
+# --------------------------------------------------
+
+# Prevent directory browsing
+Options -Indexes
+
+# Default index files
+DirectoryIndex index.html index.php
+
+
+# --------------------------------------------------
+# Enable rewrite engine
+# --------------------------------------------------
+
+RewriteEngine On
+
+
+# --------------------------------------------------
+# Allow local development domain (NO redirect)
+# --------------------------------------------------
+RewriteCond %{HTTP_HOST} ^industrialfloorcontractors\.test$ [NC]
+RewriteRule ^ - [L]
+
+# --------------------------------------------------
+# Force HTTPS and non-www canonical domain (LIVE SITE ONLY)
+# --------------------------------------------------
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.industrialfloorcontractors\.co\.uk$ [NC]
+RewriteRule ^(.*)$ https://industrialfloorcontractors.co.uk/$1 [L,R=301]
+
+
+# --------------------------------------------------
+# Remove index.html from URLs
+# --------------------------------------------------
+
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+
+
+# --------------------------------------------------
+# Redirect /sitemap to sitemap.xml
+# --------------------------------------------------
+
+Redirect 301 /sitemap /sitemap.xml
+
+
+# --------------------------------------------------
+# Security: block hidden files (.env, .git etc)
+# --------------------------------------------------
+
+RewriteRule (^|/)\.(?!well-known) - [F]
+
+
+# --------------------------------------------------
+# Security: block access to sensitive folders
+# --------------------------------------------------
+
+RewriteRule ^(vendor|config|mail)/ - [F,L]
+
+
+# --------------------------------------------------
+# Security: block access to sensitive root files
+# --------------------------------------------------
+
+RewriteRule ^(composer.lock|composer.json|\.htaccess)$ - [F]
+
+
+# --------------------------------------------------
+# Security: block php.ini
+# --------------------------------------------------
+
+RewriteRule ^php\.ini$ - [F]
+
+
+# --------------------------------------------------
+# Basic exploit filtering
+# --------------------------------------------------
+
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule .* - [F]
+
+
+# --------------------------------------------------
+# Block common spam / attack bots
+# --------------------------------------------------
+
+RewriteCond %{HTTP_USER_AGENT} (curl|wget|python|scrapy|nikto|sqlmap) [NC]
+RewriteRule .* - [F,L]
+
+
+# --------------------------------------------------
+# Custom error documents
+# --------------------------------------------------
+
+ErrorDocument 404 /404
+
+
+# --------------------------------------------------
+# Browser caching rules
+# --------------------------------------------------
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresDefault "access plus 10 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 1 minute"
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/ico "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 7 days"
+</IfModule>
+
+
+# --------------------------------------------------
+# Google PageSpeed module optimizations (if installed)
+# --------------------------------------------------
+
+<IfModule pagespeed_module>
+    ModPageSpeed on
+    ModPagespeedRewriteLevel CoreFilters
+    ModPagespeedEnableFilters prioritize_critical_css
+    ModPagespeedEnableFilters defer_javascript
+    ModPagespeedEnableFilters sprite_images
+    ModPagespeedEnableFilters convert_png_to_jpeg,convert_jpeg_to_webp
+    ModPagespeedEnableFilters collapse_whitespace,remove_comments
+</IfModule>
+
+
+# --------------------------------------------------
+# Gzip compression
+# --------------------------------------------------
+
+<FilesMatch "\\.(js|css|html|ico|png|svg)$">
+   SetOutputFilter DEFLATE
+</FilesMatch>
+
+
+# --------------------------------------------------
+# Block access to .htaccess file
+# --------------------------------------------------
+
+<Files .htaccess>
+  deny from all
+</Files>
+
+
+# --------------------------------------------------
+# MIME types and Gzip for icons and SVGs
+# --------------------------------------------------
+
+AddType image/x-icon .ico
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+
+# --------------------------------------------------
+# Security headers
+# --------------------------------------------------
+
+<IfModule mod_headers.c>
+  Header set X-XSS-Protection: "1; mode=block"
+  Header set X-Content-Type-Options: nosniff
+  Header set X-Frame-Options: SAMEORIGIN
+  <FilesMatch ".(js|css|xml|gz|html)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+  <FilesMatch "\.(svg|svgz)$">
+      Header unset X-Frame-Options
+  </FilesMatch>
+</IfModule>
+
+
+# --------------------------------------------------
+# HSTS security header (forces HTTPS in browsers)
+# --------------------------------------------------
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+</IfModule>
+
