@@ -9,7 +9,7 @@ navbar.innerHTML = `
         </a>
 
         <nav class="hidden md:block">
-          <ul class="flex items-center justify-center gap-4 lg:gap-6 text-sm font-semibold">
+          <ul class="flex items-center justify-center gap-7 lg:gap-9 text-sm font-semibold">
             <li><a class="navLink transition" href="/#hero">Home</a></li>
             <li><a class="navLink transition" href="/#aboutus">About</a></li>
             <li><a class="navLink transition" href="/#ourservices">Our Services</a></li>
@@ -123,7 +123,7 @@ navbar.innerHTML = `
         <div class="hidden md:flex items-center gap-2 sm:gap-3 shrink-0">
           <a href="tel:03333449598" class="inline-flex items-center gap-2 rounded-2xl bg-[#2c4a80]/10 px-4 py-2 text-sm font-semibold text-[#2c4a80] ring-1 ring-[#2c4a80]/15 transition hover:bg-[#2c4a80]/15">
             <i class="fa-solid fa-phone"></i>
-            <span class="inline-flex h-4 w-6 shrink-0 overflow-hidden rounded-[3px] ring-1 ring-[#2c4a80]/15" aria-hidden="true">
+            <span class="inline-flex h-4 w-6 shrink-0 overflow-hidden rounded-[3px]" aria-hidden="true">
               <svg viewBox="0 0 60 30" class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
                 <rect width="60" height="30" fill="#012169"/>
                 <path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/>
@@ -277,7 +277,7 @@ navbar.innerHTML = `
 
         <a href="tel:03333449598" class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-900/10 transition hover:bg-slate-50">
           <i class="fa-solid fa-phone text-[#2c4a80]"></i>
-          <span class="inline-flex h-4 w-6 shrink-0 overflow-hidden rounded-[3px] ring-1 ring-slate-900/10" aria-hidden="true">
+          <span class="inline-flex h-4 w-6 shrink-0 overflow-hidden rounded-[3px]" aria-hidden="true">
             <svg viewBox="0 0 60 30" class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
               <rect width="60" height="30" fill="#012169"/>
               <path d="M0 0l60 30M60 0L0 30" stroke="#fff" stroke-width="6"/>

@@ -133,11 +133,11 @@ if (contact) {
                             </div>
 
                             <div class="mt-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-                                <div class="relative h-[17rem] w-full sm:h-[19rem]">
+                                <div class="relative w-full">
                                     <img src="${escapeHtml(contactConfig.imageSrc)}"
                                         width="1172" height="781"
                                         alt="${escapeHtml(contactConfig.imageAlt)}"
-                                        class="absolute inset-0 h-full w-full object-cover" />
+                                        class="block h-auto w-full" />
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-slate-950/10 to-transparent"></div>
 
                                     <div

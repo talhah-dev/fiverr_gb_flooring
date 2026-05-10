@@ -50,9 +50,16 @@ if (servicePartials.length) {
         data-default-detail="${escapeHtml(config.defaultDetailKey || "")}"
         aria-hidden="true"
       >
-        <div class="max-h-[min(78vh,760px)] overflow-y-auto pr-2">
+        <button
+          type="button"
+          class="serviceDetailClose absolute right-12 top-6 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white text-slate-900 shadow-sm transition hover:bg-slate-100"
+          aria-label="Close service details"
+        >
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <div class="max-h-[min(78vh,760px)] overflow-y-auto pr-5">
           ${Object.entries(config.serviceDetails).map(([key, detail]) => `
-            <article class="serviceDetailItem ${key === config.defaultDetailKey ? "" : "hidden"}" data-service-detail="${escapeHtml(key)}">
+            <article class="serviceDetailItem pr-12 ${key === config.defaultDetailKey ? "" : "hidden"}" data-service-detail="${escapeHtml(key)}">
               <h3 class="text-[2rem] font-semibold leading-tight">${escapeHtml(detail.title)}</h3>
               <p class="mt-6 text-base leading-relaxed text-white/90">${escapeHtml(detail.intro)}</p>
 
@@ -113,14 +120,16 @@ if (servicePartials.length) {
       </div>
 
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-5">
+          <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[#2c4a80] shadow-sm">
+            <i class="${escapeHtml(config.eyebrowIcon)}"></i>
+            <span class="text-sm font-semibold tracking-wide">${escapeHtml(config.eyebrowText)}</span>
+          </div>
+        </div>
+
         <div class="grid items-start gap-8 lg:grid-cols-12 lg:gap-10">
           <div class="lg:col-span-4">
-            <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-[#2c4a80] shadow-sm">
-              <i class="${escapeHtml(config.eyebrowIcon)}"></i>
-              <span class="text-sm font-semibold tracking-wide">${escapeHtml(config.eyebrowText)}</span>
-            </div>
-
-            <h2 class="mt-4 max-w-md text-3xl font-semibold leading-tight text-slate-900 sm:text-[2.35rem]">${escapeHtml(config.title)}</h2>
+            <h2 class="max-w-md text-3xl font-semibold leading-tight text-slate-900 sm:text-[2.35rem]">${escapeHtml(config.title)}</h2>
             <p class="mt-4 max-w-md text-base leading-relaxed text-slate-600 sm:text-lg">${escapeHtml(config.intro)}</p>
 
             <div class="mt-6 space-y-4">
@@ -798,6 +807,7 @@ if (servicePartials.length) {
 
     if (detailPanel && detailTriggers.length) {
       const detailItems = Array.from(detailPanel.querySelectorAll("[data-service-detail]"));
+      const closeDetailBtn = detailPanel.querySelector(".serviceDetailClose");
       let activeDetailKey = "";
       let activeTrigger = null;
       let hideTimer = null;
@@ -855,6 +865,7 @@ if (servicePartials.length) {
       };
 
       const closePopup = () => {
+        activeTrigger = null;
         detailPanel.classList.add("pointer-events-none", "opacity-0");
         detailPanel.classList.remove("pointer-events-auto", "opacity-100");
         detailPanel.setAttribute("aria-hidden", "true");
@@ -895,6 +906,16 @@ if (servicePartials.length) {
       });
 
       detailPanel.addEventListener("mouseleave", scheduleClose);
+
+      if (closeDetailBtn) {
+        closeDetailBtn.addEventListener("click", () => {
+          if (hideTimer) {
+            clearTimeout(hideTimer);
+            hideTimer = null;
+          }
+          closePopup();
+        });
+      }
 
       window.addEventListener("scroll", () => {
         if (activeTrigger && !detailPanel.classList.contains("hidden")) {
