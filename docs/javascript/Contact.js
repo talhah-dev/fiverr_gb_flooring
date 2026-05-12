@@ -41,11 +41,11 @@ if (contact) {
     ),
     imageSrc: getConfigValue(
       "contactImageSrc",
-      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "/docs/assets/map.svg"
     ),
     imageAlt: getConfigValue(
       "contactImageAlt",
-      "Industrial concrete flooring inside a warehouse"
+      "Map of UK flooring coverage regions"
     ),
     formIcon: getConfigValue("contactFormIcon", "fa-solid fa-comment-dots"),
     formTitle: getConfigValue("contactFormTitle", "Complete Our Contact Form"),

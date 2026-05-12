@@ -9,7 +9,7 @@ navbar.innerHTML = `
         </a>
 
         <nav class="hidden md:block">
-          <ul class="flex items-center justify-center gap-7 lg:gap-9 text-sm font-semibold">
+          <ul class="flex items-center justify-center gap-9 lg:gap-12 text-sm font-semibold">
             <li><a class="navLink transition" href="/#hero">Home</a></li>
             <li><a class="navLink transition" href="/#aboutus">About</a></li>
             <li><a class="navLink transition" href="/#ourservices">Our Services</a></li>

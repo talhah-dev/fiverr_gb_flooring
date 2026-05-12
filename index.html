@@ -354,15 +354,15 @@
                         </p>
 
                         <div
-                            class="mt-6 rounded-[1.75rem] border border-slate-200 bg-[linear-gradient(180deg,rgba(44,74,128,0.08),rgba(44,74,128,0.03))] p-4">
-                            <div
-                                class="overflow-hidden rounded-[1.35rem] border border-[#2c4a80]/15 bg-[radial-gradient(circle_at_top,rgba(44,74,128,0.1),rgba(255,255,255,0.96)_55%)] p-3">
-                                <div class="relative mx-auto w-full max-w-[25rem] scale-[1.04] lg:max-w-[26rem] lg:scale-[1.2] origin-center">
+                            class="mt-6 rounded-[1.75rem] bg-white p-4 lg:flex lg:min-h-[28rem] lg:flex-1 lg:items-center lg:justify-center">
+                            <div class="flex w-full items-center justify-center overflow-hidden rounded-[1.35rem] bg-white p-2 lg:h-full">
+                                <div class="relative mx-auto w-full max-w-[25rem] scale-[1.04] lg:max-w-[27rem] lg:scale-[1.18] origin-center">
                                     <img src="/docs/assets/map.svg" alt="Map of UK flooring coverage regions"
                                         class="mx-auto h-auto w-full" />
 
                                     <button type="button"
                                         class="group absolute left-[32%] top-[30%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="north-west"
                                         aria-label="North West">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">North
@@ -371,6 +371,7 @@
 
                                     <button type="button"
                                         class="group absolute left-[62%] top-[22%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="north-east"
                                         aria-label="North East">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">North
@@ -379,6 +380,7 @@
 
                                     <button type="button"
                                         class="group absolute left-[49%] top-[36%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="yorkshire"
                                         aria-label="Yorkshire">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">Yorkshire</span>
@@ -386,6 +388,7 @@
 
                                     <button type="button"
                                         class="group absolute left-[35%] top-[51%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="wales"
                                         aria-label="Wales">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">Wales</span>
@@ -393,6 +396,7 @@
 
                                     <button type="button"
                                         class="group absolute left-[51%] top-[55%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="west-midlands"
                                         aria-label="West Midlands">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">West
@@ -401,6 +405,7 @@
 
                                     <button type="button"
                                         class="group absolute left-[58%] top-[58%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="east-midlands"
                                         aria-label="East Midlands">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">East
@@ -409,6 +414,7 @@
 
                                     <button type="button"
                                         class="group absolute left-[63%] top-[70%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="east-anglia"
                                         aria-label="East Anglia">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">East
@@ -417,6 +423,7 @@
 
                                     <button type="button"
                                         class="group absolute left-[57%] top-[83%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="south-east"
                                         aria-label="South East">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">South
@@ -425,6 +432,7 @@
 
                                     <button type="button"
                                         class="group absolute left-[37%] top-[86%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                        data-region-key="south"
                                         aria-label="South">
                                         <span
                                             class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">South</span>
@@ -435,8 +443,8 @@
 
                         <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
                             <div class="rounded-2xl border border-slate-200 bg-white p-4">
-                                <p class="text-sm font-semibold text-slate-900">Coverage</p>
-                                <p class="mt-1 text-xs leading-relaxed text-slate-600">Regional service planning across
+                                <p class="text-sm font-semibold text-slate-900" data-coverage-title>Coverage</p>
+                                <p class="mt-1 text-xs line-clamp-2 leading-relaxed text-slate-600" data-coverage-text>Regional service planning across
                                     key industrial, warehousing and commercial corridors.</p>
                             </div>
                             <!--<div class="rounded-2xl border border-slate-200 bg-white p-4">
@@ -571,8 +579,8 @@
             data-contact-image-kicker="GB FLOORING GROUP"
             data-contact-image-title="Concrete floor installation, surfacing &amp; repair"
             data-contact-image-text="Planned support for warehouses, factories and commercial sites nationwide."
-            data-contact-image-src="/docs/assets/img5.jpg"
-            data-contact-image-alt="Concrete floor painting and finishing works"
+            data-contact-image-src="/docs/assets/map.svg"
+            data-contact-image-alt="Map of UK flooring coverage regions"
             data-contact-form-title="Complete our contact form"
             data-contact-form-text="Please complete the form and we will be in touch about your flooring enquiry as soon as possible."
             data-contact-region-field="Nationwide"></div>
@@ -971,6 +979,7 @@
     <script src="/docs/javascript/Navbar.js"></script>
     <script src="/docs/javascript/Footer.js"></script>
     <script src="/docs/javascript/Operate.js"></script>
+    <script src="/docs/javascript/CoverageHover.js"></script>
     <script src="/docs/javascript/ServicePartial.js"></script>
     <script src="/docs/javascript/SectorsPopup.js"></script>
     <script src="/docs/javascript/SupportStages.js"></script>
