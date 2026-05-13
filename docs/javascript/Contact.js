@@ -117,23 +117,8 @@ if (contact) {
                                 </div>
                             </div>
 
-                            <div class="mt-6 rounded-2xl border border-[#2c4a80]/15 bg-[#2c4a80]/5 p-5">
-                                <div class="flex items-start gap-3">
-                                    <span
-                                        class="mt-0.5 shrink-0 grid h-10 w-10 place-items-center rounded-xl bg-white text-[#2c4a80] shadow-sm">
-                                        <i class="${escapeHtml(contactConfig.regionIcon)}"></i>
-                                    </span>
-                                    <div>
-                                        <p class="font-semibold text-slate-900">${escapeHtml(contactConfig.regionTitle)}</p>
-                                        <p class="mt-1 text-sm leading-relaxed text-slate-600">
-                                            ${escapeHtml(contactConfig.regionText)}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div data-coverage-group class="mt-6">
-                                <div class="rounded-2xl border border-slate-200 bg-white p-4">
+                                <div class="rounded-2xl border border-slate-200 bg-white p-4 min-h-[7.75rem]">
                                     <p class="text-sm font-semibold text-slate-900" data-coverage-title>Coverage</p>
                                     <p class="mt-1 text-xs leading-relaxed text-slate-600" data-coverage-text>Regional service planning across
                                         key industrial, warehousing and commercial corridors.</p>
