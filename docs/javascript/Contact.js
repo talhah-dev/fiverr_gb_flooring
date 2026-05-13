@@ -132,29 +132,100 @@ if (contact) {
                                 </div>
                             </div>
 
-                            <div class="mt-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-                                <div class="relative w-full">
-                                    <img src="${escapeHtml(contactConfig.imageSrc)}"
-                                        width="1172" height="781"
-                                        alt="${escapeHtml(contactConfig.imageAlt)}"
-                                        class="block h-auto w-full" />
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/35 via-slate-950/10 to-transparent"></div>
-
-                                    <div
-                                        class="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2 text-white backdrop-blur">
-                                        <i class="${escapeHtml(contactConfig.imageBadgeIcon)} text-xs"></i>
-                                        <span class="text-xs font-semibold">${escapeHtml(contactConfig.imageBadge)}</span>
-                                    </div>
+                            <div data-coverage-group class="mt-6">
+                                <div class="rounded-2xl border border-slate-200 bg-white p-4">
+                                    <p class="text-sm font-semibold text-slate-900" data-coverage-title>Coverage</p>
+                                    <p class="mt-1 text-xs leading-relaxed text-slate-600" data-coverage-text>Regional service planning across
+                                        key industrial, warehousing and commercial corridors.</p>
                                 </div>
 
-                                <div class="border-t border-slate-200 bg-white px-5 py-5 sm:px-6">
-                                    <p class="text-[11px] font-semibold tracking-[0.3em] text-slate-500">${escapeHtml(contactConfig.imageKicker)}</p>
-                                    <p class="mt-2 text-xl font-semibold leading-tight text-slate-900">
-                                        ${escapeHtml(contactConfig.imageTitle)}
-                                    </p>
-                                    <p class="mt-2 text-sm leading-relaxed text-slate-600">
-                                        ${escapeHtml(contactConfig.imageText)}
-                                    </p>
+                                <div class="mt-6 overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-2 shadow-sm">
+                                    <div class="flex w-full items-center justify-center overflow-hidden rounded-[1.35rem] bg-white p-2">
+                                        <div class="relative mx-auto w-full max-w-[25rem] scale-[1.02] origin-center">
+                                            <img src="${escapeHtml(contactConfig.imageSrc)}"
+                                                width="1172" height="781"
+                                                alt="${escapeHtml(contactConfig.imageAlt)}"
+                                                class="mx-auto h-auto w-full" />
+
+                                            <button type="button"
+                                                class="group absolute left-[32%] top-[30%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="north-west"
+                                                aria-label="North West">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">North
+                                                    West</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="group absolute left-[62%] top-[22%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="north-east"
+                                                aria-label="North East">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">North
+                                                    East</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="group absolute left-[49%] top-[36%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="yorkshire"
+                                                aria-label="Yorkshire">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">Yorkshire</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="group absolute left-[35%] top-[51%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="wales"
+                                                aria-label="Wales">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">Wales</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="group absolute left-[51%] top-[55%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="west-midlands"
+                                                aria-label="West Midlands">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">West
+                                                    Midlands</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="group absolute left-[58%] top-[58%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="east-midlands"
+                                                aria-label="East Midlands">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">East
+                                                    Midlands</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="group absolute left-[63%] top-[70%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="east-anglia"
+                                                aria-label="East Anglia">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">East
+                                                    Anglia</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="group absolute left-[57%] top-[83%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="south-east"
+                                                aria-label="South East">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">South
+                                                    East</span>
+                                            </button>
+
+                                            <button type="button"
+                                                class="group absolute left-[37%] top-[86%] h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-4 border-white bg-[#2c4a80] shadow-[0_0_0_6px_rgba(44,74,128,0.16)]"
+                                                data-region-key="south"
+                                                aria-label="South">
+                                                <span
+                                                    class="pointer-events-none absolute left-6 top-1/2 hidden -translate-y-1/2 whitespace-nowrap rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-md group-hover:inline-flex group-focus-visible:inline-flex">South</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

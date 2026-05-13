@@ -1,8 +1,6 @@
-const coverageTitle = document.querySelector("[data-coverage-title]");
-const coverageText = document.querySelector("[data-coverage-text]");
-const coverageRegionButtons = Array.from(document.querySelectorAll("[data-region-key]"));
+const coverageGroups = Array.from(document.querySelectorAll("[data-coverage-group]"));
 
-if (coverageTitle && coverageText && coverageRegionButtons.length) {
+if (coverageGroups.length) {
   const defaultCoverage = {
     title: "Coverage",
     text: "Regional service planning across key industrial, warehousing and commercial corridors.",
@@ -47,21 +45,29 @@ if (coverageTitle && coverageText && coverageRegionButtons.length) {
     },
   };
 
-  const setCoverage = (copy) => {
-    coverageTitle.textContent = copy.title;
-    coverageText.textContent = copy.text;
-  };
+  coverageGroups.forEach((group) => {
+    const coverageTitle = group.querySelector("[data-coverage-title]");
+    const coverageText = group.querySelector("[data-coverage-text]");
+    const coverageRegionButtons = Array.from(group.querySelectorAll("[data-region-key]"));
 
-  const resetCoverage = () => setCoverage(defaultCoverage);
+    if (!coverageTitle || !coverageText || !coverageRegionButtons.length) return;
 
-  coverageRegionButtons.forEach((button) => {
-    const key = button.dataset.regionKey;
-    const copy = regionCopy[key];
-    if (!copy) return;
+    const setCoverage = (copy) => {
+      coverageTitle.textContent = copy.title;
+      coverageText.textContent = copy.text;
+    };
 
-    button.addEventListener("mouseenter", () => setCoverage(copy));
-    button.addEventListener("focus", () => setCoverage(copy));
-    button.addEventListener("mouseleave", resetCoverage);
-    button.addEventListener("blur", resetCoverage);
+    const resetCoverage = () => setCoverage(defaultCoverage);
+
+    coverageRegionButtons.forEach((button) => {
+      const key = button.dataset.regionKey;
+      const copy = regionCopy[key];
+      if (!copy) return;
+
+      button.addEventListener("mouseenter", () => setCoverage(copy));
+      button.addEventListener("focus", () => setCoverage(copy));
+      button.addEventListener("mouseleave", resetCoverage);
+      button.addEventListener("blur", resetCoverage);
+    });
   });
 }
